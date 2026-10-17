@@ -111,24 +111,26 @@
       box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
     }
 
-    /* Hero Section */
+    /* Hero Section com a Imagem de Fundo */
     .hero {
-      padding: 130px 20px 60px;
+      padding: 150px 20px 80px;
       text-align: center;
-      background: radial-gradient(circle at center, rgba(0, 240, 255, 0.05) 0%, transparent 70%);
+      background: linear-gradient(180deg, rgba(8, 9, 12, 0.75) 0%, rgba(8, 9, 12, 0.95) 100%), 
+                  url('file_00000000f0d0820ea2aeb03ed181eb93.png') center/cover no-repeat;
     }
 
     .hero-badge {
       display: inline-block;
       padding: 6px 16px;
       border-radius: 20px;
-      background: rgba(212, 175, 55, 0.1);
+      background: rgba(212, 175, 55, 0.15);
       border: 1px solid var(--gold-primary);
       color: var(--gold-light);
       font-size: 0.8rem;
       font-weight: 600;
       letter-spacing: 1px;
       margin-bottom: 20px;
+      backdrop-filter: blur(5px);
     }
 
     .hero h1 {
@@ -136,16 +138,18 @@
       font-weight: 800;
       margin-bottom: 15px;
       text-transform: uppercase;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.8);
     }
 
     .hero h1 .highlight-cyan { color: var(--cyan-neon); }
     .hero h1 .highlight-pink { color: var(--pink-neon); }
 
     .hero p {
-      color: var(--text-muted);
+      color: var(--text-main);
       max-width: 600px;
       margin: 0 auto 30px;
       font-size: 0.95rem;
+      text-shadow: 0 1px 5px rgba(0,0,0,0.8);
     }
 
     .hero-buttons {
@@ -184,10 +188,11 @@
       align-items: center;
       gap: 10px;
       transition: all 0.3s ease;
+      background: rgba(0,0,0,0.4);
     }
 
     .btn-outline:hover {
-      background: rgba(0, 240, 255, 0.1);
+      background: rgba(0, 240, 255, 0.2);
     }
 
     /* Estrutura dos Containers */
@@ -214,6 +219,58 @@
       color: var(--text-muted);
       font-size: 0.9rem;
       margin-top: 5px;
+    }
+
+    /* Cards de Promoção e Fidelidade */
+    .promo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .promo-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 25px;
+      text-align: center;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .promo-card:hover {
+      border-color: var(--cyan-neon);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+
+    .promo-icon {
+      font-size: 2.2rem;
+      color: var(--gold-primary);
+      margin-bottom: 12px;
+    }
+
+    .promo-card h3 {
+      font-size: 1.15rem;
+      color: #FFF;
+      margin-bottom: 10px;
+    }
+
+    .promo-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .highlight-badge {
+      display: inline-block;
+      margin-top: 10px;
+      background: rgba(0, 240, 255, 0.1);
+      color: var(--cyan-neon);
+      border: 1px solid var(--cyan-neon);
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.8rem;
     }
 
     /* Tabela de Preços Proporcionais */
@@ -507,6 +564,36 @@
     <div class="hero-buttons">
       <a href="#calculadora" class="btn-main"><i class="fa-solid fa-calculator"></i> Simular Orçamento</a>
       <a href="https://wa.me/5571991430784" target="_blank" class="btn-outline"><i class="fa-brands fa-whatsapp"></i> Falar Conosco</a>
+    </div>
+  </section>
+
+  <!-- Seção de Promoções e Fidelidade -->
+  <section class="container" id="promocoes">
+    <div class="section-title">
+      <h2>Vantagens Exclusivas</h2>
+      <p>Programas especiais de fidelidade e indicação para nossos clientes</p>
+    </div>
+
+    <div class="promo-grid">
+      <!-- Card Fidelidade -->
+      <div class="promo-card">
+        <div class="promo-icon">
+          <i class="fa-solid fa-gift"></i>
+        </div>
+        <h3>Programa de Fidelidade</h3>
+        <p>Faça <strong>1 Lavagem Técnica Premium</strong> e <strong>2 Lavagens Técnicas Xpress</strong> e ganhe a <strong>3ª Xpress grátis!</strong></p>
+        <span class="highlight-badge">3ª Xpress Grátis</span>
+      </div>
+
+      <!-- Card Indicação -->
+      <div class="promo-card">
+        <div class="promo-icon">
+          <i class="fa-solid fa-users"></i>
+        </div>
+        <h3>Cliente Indica Cliente</h3>
+        <p>Indique um amigo para cuidar do veículo conosco e ganhe um desconto especial em qualquer serviço desejado.</p>
+        <span class="highlight-badge">10% OFF</span>
+      </div>
     </div>
   </section>
 
