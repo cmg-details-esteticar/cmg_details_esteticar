@@ -1,893 +1,204 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CMG Details EstetiCar | Estética Automotiva</title>
-  
-  <!-- Fontes Google -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Montserrat:wght@400;500;600;700;800&family=Cinzel:wght@700;800&display=swap" rel="stylesheet">
-  
-  <!-- Ícones Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <style>
-    :root {
-      --bg-light: #F8FAFC;
-      --bg-card: #FFFFFF;
-      --bg-card-hover: #F1F5F9;
-      --gold-primary: #B8860B;
-      --gold-light: #9A6E03;
-      --cyan-neon: #00838F;
-      --pink-neon: #D81B60;
-      --text-main: #0F172A;
-      --text-muted: #475569;
-      --border-subtle: #E2E8F0;
-      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
-      --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    body {
-      background-color: var(--bg-light);
-      color: var(--text-main);
-      overflow-x: hidden;
-      line-height: 1.6;
-    }
-
-    /* Cabeçalho / Navbar */
-    header {
-      background: rgba(255, 255, 255, 0.98);
-      backdrop-filter: blur(10px);
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      border-bottom: 1px solid var(--border-subtle);
-      padding: 10px 24px;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .brand-logo {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      text-decoration: none;
-    }
-
-    /* Logo Mais Visível */
-    .brand-logo img {
-      width: 68px;
-      height: 68px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid var(--gold-primary);
-      box-shadow: 0 0 12px rgba(184, 134, 11, 0.3);
-      transition: transform 0.3s ease;
-    }
-
-    .brand-logo:hover img {
-      transform: scale(1.05);
-    }
-
-    .brand-title {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      line-height: 1.05;
-    }
-
-    /* Fonte Gótica para o Nome Principal */
-    .brand-gothic {
-      font-family: 'UnifrakturMaguntia', cursive;
-      font-size: 2.1rem;
-      color: var(--text-main);
-      letter-spacing: 0.5px;
-      text-shadow: 1px 1px 0px rgba(184, 134, 11, 0.2);
-    }
-
-    /* Fonte Normal / Limpa para a Estética Automotiva */
-    .brand-subtext {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.68rem;
-      font-weight: 800;
-      color: var(--cyan-neon);
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-top: 3px;
-    }
-
-    /* Hero Section */
-    .hero {
-      padding: 160px 20px 70px;
-      text-align: center;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.88) 0%, rgba(248, 250, 252, 0.98) 100%), 
-                  url('file_00000000f0d0820ea2aeb03ed181eb93.png') center/cover no-repeat;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      padding: 6px 16px;
-      border-radius: 20px;
-      background: #FFF8E7;
-      border: 1px solid var(--gold-primary);
-      color: var(--gold-primary);
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 {
-      font-size: 2.2rem;
-      font-weight: 800;
-      margin-bottom: 15px;
-      text-transform: uppercase;
-      color: var(--text-main);
-    }
-
-    .hero h1 .highlight-cyan { color: var(--cyan-neon); }
-    .hero h1 .highlight-pink { color: var(--pink-neon); }
-
-    .hero p {
-      color: var(--text-muted);
-      max-width: 600px;
-      margin: 0 auto 30px;
-      font-size: 1rem;
-      font-weight: 500;
-    }
-
-    .hero-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .btn-main {
-      background: linear-gradient(135deg, #D4AF37, var(--gold-primary));
-      color: #FFF;
-      padding: 12px 28px;
-      border-radius: 8px;
-      font-weight: 700;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 12px rgba(184, 134, 11, 0.25);
-    }
-
-    .btn-main:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(184, 134, 11, 0.4);
-    }
-
-    .btn-outline {
-      border: 2px solid var(--cyan-neon);
-      color: var(--cyan-neon);
-      padding: 12px 28px;
-      border-radius: 8px;
-      font-weight: 700;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      transition: all 0.3s ease;
-      background: #FFF;
-    }
-
-    .btn-outline:hover {
-      background: rgba(0, 131, 143, 0.08);
-    }
-
-    /* Estrutura dos Containers */
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 35px;
-    }
-
-    .section-title h2 {
-      font-size: 1.8rem;
-      font-family: 'Cinzel', serif;
-      color: var(--gold-primary);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-weight: 800;
-    }
-
-    .section-title p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      margin-top: 5px;
-      font-weight: 500;
-    }
-
-    /* Cards de Promoção e Fidelidade Lado a Lado */
-    .promo-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .promo-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 12px;
-      padding: 25px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      transition: all 0.3s ease;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .promo-card:hover {
-      border-color: var(--cyan-neon);
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-md);
-    }
-
-    .promo-icon {
-      font-size: 2.2rem;
-      color: var(--gold-primary);
-      margin-bottom: 12px;
-    }
-
-    .promo-card h3 {
-      font-size: 1.1rem;
-      color: var(--text-main);
-      margin-bottom: 10px;
-      font-weight: 700;
-    }
-
-    .promo-card p {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      margin-bottom: 15px;
-    }
-
-    .highlight-badge {
-      display: inline-block;
-      background: #E0F7FA;
-      color: var(--cyan-neon);
-      border: 1px solid var(--cyan-neon);
-      padding: 4px 12px;
-      border-radius: 12px;
-      font-weight: 700;
-      font-size: 0.8rem;
-    }
-
-    /* Tabela de Preços Proporcionais */
-    .prices-container {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 12px;
-      padding: 30px 20px;
-      overflow-x: auto;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .price-table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: left;
-    }
-
-    .price-table th, .price-table td {
-      padding: 14px;
-      border-bottom: 1px solid var(--border-subtle);
-    }
-
-    .price-table th {
-      color: var(--gold-primary);
-      font-size: 0.95rem;
-      text-transform: uppercase;
-      font-weight: 800;
-      background: #FAFAFA;
-    }
-
-    .price-table td {
-      font-size: 0.92rem;
-      color: var(--text-main);
-    }
-
-    .price-table tr:hover {
-      background: #F8FAFC;
-    }
-
-    .price-val {
-      color: var(--gold-light);
-      font-weight: 700;
-    }
-
-    /* Calculadora de Orçamento */
-    .calc-box {
-      background: var(--bg-card);
-      border: 2px solid var(--cyan-neon);
-      border-radius: 12px;
-      padding: 35px 25px;
-      box-shadow: var(--shadow-md);
-    }
-
-    .calc-group {
-      margin-bottom: 25px;
-    }
-
-    .calc-label {
-      display: block;
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--gold-primary);
-      margin-bottom: 12px;
-      text-transform: uppercase;
-    }
-
-    .car-types-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-      gap: 10px;
-    }
-
-    .car-btn {
-      background: #F1F5F9;
-      border: 1px solid var(--border-subtle);
-      color: var(--text-main);
-      padding: 12px;
-      border-radius: 8px;
-      cursor: pointer;
-      text-align: center;
-      font-weight: 700;
-      font-size: 0.88rem;
-      transition: all 0.2s ease;
-    }
-
-    .car-btn:hover, .car-btn.active {
-      border-color: var(--gold-primary);
-      background: #FFF8E7;
-      color: var(--gold-primary);
-    }
-
-    .checkbox-services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 12px;
-    }
-
-    .service-item-wrapper {
-      background: #F8FAFC;
-      border-radius: 8px;
-      border: 1px solid var(--border-subtle);
-      transition: all 0.2s ease;
-      overflow: hidden;
-    }
-
-    .service-item-wrapper:hover {
-      border-color: var(--cyan-neon);
-      background: #FFF;
-    }
-
-    .checkbox-item {
-      padding: 12px 15px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      cursor: pointer;
-      font-size: 0.9rem;
-      font-weight: 600;
-      user-select: none;
-      width: 100%;
-    }
-
-    .checkbox-item input {
-      accent-color: var(--cyan-neon);
-      width: 18px;
-      height: 18px;
-      cursor: pointer;
-    }
-
-    .checkbox-label-text {
-      flex-grow: 1;
-      color: var(--text-main);
-    }
-
-    .toggle-arrow {
-      background: none;
-      border: none;
-      color: var(--gold-primary);
-      font-size: 0.9rem;
-      cursor: pointer;
-      padding: 4px 8px;
-      transition: transform 0.3s ease;
-    }
-
-    .toggle-arrow.open {
-      transform: rotate(180deg);
-    }
-
-    .service-details {
-      display: none;
-      padding: 10px 15px 15px 35px;
-      background: #F1F5F9;
-      border-top: 1px dashed var(--border-subtle);
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    .service-details ul {
-      list-style: none;
-    }
-
-    .service-details li {
-      margin-bottom: 6px;
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-    }
-
-    .service-details li i {
-      color: var(--cyan-neon);
-      font-size: 0.8rem;
-      margin-top: 3px;
-    }
-
-    .calc-total-box {
-      margin-top: 30px;
-      padding-top: 20px;
-      border-top: 1px solid var(--border-subtle);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-
-    .total-price {
-      font-size: 1.8rem;
-      font-weight: 800;
-      color: var(--gold-primary);
-    }
-
-    /* Rodapé Compacto */
-    footer {
-      background: #FFF;
-      border-top: 1px solid var(--border-subtle);
-      padding: 35px 20px 20px;
-      text-align: center;
-    }
-
-    .social-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-      color: #FFF;
-      padding: 10px 22px;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 0.88rem;
-      margin: 12px 0 20px;
-      transition: transform 0.3s ease;
-      box-shadow: 0 4px 12px rgba(220, 39, 67, 0.2);
-    }
-
-    .social-btn:hover {
-      transform: scale(1.05);
-    }
-
-    /* Formas de Pagamento em Texto Compacto */
-    .payment-compact {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 15px;
-      flex-wrap: wrap;
-      margin-top: 10px;
-      padding-top: 15px;
-      border-top: 1px solid var(--border-subtle);
-    }
-
-    .payment-compact span {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-weight: 600;
-    }
-
-    .payment-compact i {
-      color: var(--gold-primary);
-      font-size: 0.95rem;
-    }
-
-    .copyright {
-      color: var(--text-muted);
-      font-size: 0.8rem;
-      margin-top: 15px;
-    }
-
-    /* Responsividade */
-    @media (max-width: 900px) {
-      .promo-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .brand-gothic { font-size: 1.6rem; }
-      .brand-subtext { font-size: 0.58rem; }
-      .hero h1 { font-size: 1.6rem; }
-      .calc-total-box { flex-direction: column; text-align: center; }
-      .price-table th, .price-table td { padding: 10px 6px; font-size: 0.82rem; }
-      .payment-compact { flex-direction: column; gap: 6px; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#020812">
+<meta name="description" content="CMG Details EstetiCar — lavagem técnica, higienização interna e cuidado automotivo em Salvador.">
+<title>CMG Details EstetiCar | Estética Automotiva</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Cinzel:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+:root{--bg:#020812;--panel:#071525;--panel2:#0a1c2e;--blue:#00bfff;--blue2:#0879e8;--gold:#d8ad45;--white:#f4f8ff;--muted:#a9bacb;--line:#123a58;--green:#00b86b}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:95px}
+body{font-family:Montserrat,Arial,sans-serif;background:var(--bg);color:var(--white);line-height:1.6;overflow-x:hidden}
+a{color:inherit}
+header{position:sticky;top:0;z-index:50;background:rgba(2,8,18,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--blue);box-shadow:0 4px 25px #00182b}
+.nav{max-width:1200px;margin:auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:13px;text-decoration:none;min-width:0}
+.logo{width:62px;height:62px;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle,#12324a,#020812 70%);color:var(--blue);font-weight:900;font-size:1.25rem;box-shadow:0 0 18px #007cb955;flex-shrink:0}
+.logo span{display:block;font-size:.48rem;letter-spacing:2px;color:var(--gold);text-align:center}
+.brand-name{font-family:Cinzel,serif;font-size:clamp(1rem,2.7vw,1.65rem);font-weight:800;line-height:1.2}
+.brand-sub{font-size:.63rem;color:var(--blue);letter-spacing:3px;font-weight:800}
+nav{display:flex;gap:20px;align-items:center}
+nav a{text-decoration:none;font-size:.76rem;font-weight:800;text-transform:uppercase;color:#d8e7f4}
+nav a:hover{color:var(--blue)}
+.menu-toggle{display:none;background:none;border:1px solid var(--line);color:white;border-radius:8px;padding:9px 12px;font-size:1.1rem}
+.hero{position:relative;isolation:isolate;min-height:570px;display:grid;align-items:center;overflow:hidden;border-bottom:1px solid var(--blue);background:linear-gradient(90deg,rgba(2,8,18,.15),rgba(2,8,18,.58) 42%,#020812 78%),url('https://images.unsplash.com/photo-1600705722906-9f3b4f9a1d2b?auto=format&fit=crop&w=1800&q=85') center/cover no-repeat}
+.hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,#020812 0%,transparent 25%,transparent 75%,#02081255)}
+.hero-inner{max-width:1200px;width:100%;margin:auto;padding:80px 24px;display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:35px;align-items:center}
+.eyebrow{display:inline-block;border:1px solid var(--blue);border-radius:30px;padding:7px 15px;color:var(--blue);font-size:.72rem;font-weight:800;letter-spacing:2px;margin-bottom:18px;background:#001525aa}
+h1{font-size:clamp(2.3rem,5.6vw,4.5rem);font-weight:900;line-height:1.02;text-transform:uppercase;max-width:760px;text-shadow:0 4px 25px #000}
+.blue{color:var(--blue)}.gold{color:var(--gold)}
+.hero p{color:#d6e7f6;max-width:620px;margin:20px 0 27px;font-size:1rem}
+.slogan{font-style:italic;color:var(--blue)!important;font-weight:700;margin-bottom:0!important}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 20px;border-radius:9px;text-decoration:none;font-weight:800;font-size:.85rem;border:1px solid transparent;transition:.2s;cursor:pointer}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.12)}
+.btn-gold{background:linear-gradient(135deg,#f4d879,#a87510);color:#10131a;box-shadow:0 5px 20px #b8860b44}
+.btn-outline{border-color:var(--blue);color:white;background:#001322bb}
+.btn-whats{background:var(--green);color:white}
+.hero-points{display:grid;gap:19px}
+.point{display:flex;gap:12px;align-items:center;font-size:.78rem;font-weight:700;text-transform:uppercase}
+.point i{width:42px;height:42px;display:grid;place-items:center;border:1px solid var(--blue);border-radius:50%;color:var(--blue);font-size:1.1rem;flex-shrink:0}
+.section{max-width:1200px;margin:auto;padding:62px 22px}
+.section-title{text-align:center;margin-bottom:30px}
+.section-title h2{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:900;text-transform:uppercase;line-height:1.2}
+.section-title p{color:var(--muted);font-size:.92rem;margin-top:8px}
+.promo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:linear-gradient(145deg,#0a2034,#030b15);border:1px solid #087fbe;border-radius:13px;padding:25px 22px;text-align:center;box-shadow:inset 0 0 24px #0076ad10,0 5px 18px #0005;transition:.25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 0 22px #00bfff25}
+.card-icon{font-size:2.2rem;color:var(--blue);margin-bottom:12px}
+.card h3{font-size:1.03rem;text-transform:uppercase;margin-bottom:8px}
+.card p{font-size:.88rem;color:#c4d6e7}
+.pill{display:inline-block;margin-top:15px;padding:5px 14px;border:1px solid var(--blue);border-radius:30px;color:var(--blue);font-size:.78rem;font-weight:800}
+.price-wrap{overflow-x:auto;border:1px solid #087fbe;border-radius:12px;background:linear-gradient(145deg,#061626,#020812)}
+table{width:100%;min-width:650px;border-collapse:collapse;text-align:left}
+th,td{padding:14px 16px;border-bottom:1px solid #123a58}
+th{background:#08243a;color:var(--blue);font-size:.76rem;text-transform:uppercase}
+td{font-size:.9rem}td.price{color:var(--gold);font-weight:800}
+.note{text-align:center;color:var(--muted);font-size:.8rem;padding:14px}
+.calculator{background:linear-gradient(120deg,#061728,#020812 65%);border:1px solid #087fbe;border-radius:15px;padding:25px;box-shadow:0 10px 35px #0006}
+.calc-grid{display:grid;grid-template-columns:220px minmax(250px,1fr) 240px;gap:22px;align-items:start}
+.calc-label{font-size:.83rem;color:var(--blue);font-weight:900;text-transform:uppercase;margin-bottom:12px}
+.car-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.car-btn{border:1px solid #31536d;border-radius:8px;background:#071625;color:#e9f3ff;padding:13px 8px;cursor:pointer;font:700 .82rem Montserrat}
+.car-btn i{display:block;font-size:1.3rem;color:var(--blue);margin-bottom:5px}
+.car-btn.active,.car-btn:hover{border-color:var(--blue);background:#06345a;box-shadow:0 0 12px #00bfff33}
+.services{display:grid;gap:9px}
+.service{border:1px solid #24445c;border-radius:8px;background:#061421;overflow:hidden}
+.service-row{display:flex;align-items:center;gap:10px;padding:11px 12px;font-size:.84rem;font-weight:700;cursor:pointer}
+.service-row input{width:17px;height:17px;accent-color:var(--blue)}
+.service-row label{flex:1;cursor:pointer}
+.details{display:none;border-top:1px dashed #24445c;padding:10px 14px;color:var(--muted);font-size:.78rem}
+.details.open{display:block}
+.details ul{padding-left:17px}
+.calc-total{border:1px solid #24445c;background:#030d18;border-radius:12px;padding:20px;text-align:center;position:sticky;top:100px}
+.total-label{font-size:.8rem;font-weight:800;text-transform:uppercase}
+.total{font-size:2.25rem;font-weight:900;color:var(--gold);margin:7px 0 17px}
+.calc-total .btn{width:100%;font-size:.8rem}
+.calc-hint{font-size:.7rem;color:var(--muted);margin-top:10px}
+footer{border-top:1px solid var(--blue);background:#01060d;padding:30px 22px 18px}
+.footer-inner{max-width:1150px;margin:auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:25px;align-items:center}
+.footer-brand{font-family:Cinzel,serif;font-weight:800;font-size:1.1rem}
+footer p{font-size:.82rem;color:var(--muted)}
+.social{display:inline-flex;margin-top:10px;gap:9px;align-items:center;color:var(--blue);font-weight:800;text-decoration:none}
+.payments{display:flex;gap:13px;flex-wrap:wrap;margin-top:10px;font-size:.78rem;color:#d7e5f3}
+.copyright{text-align:center;border-top:1px solid #152b3e;margin:22px auto 0;padding-top:14px;color:#7f94a7;font-size:.72rem}
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr}.hero-points{grid-template-columns:repeat(2,1fr);max-width:650px}.calc-grid{grid-template-columns:1fr 1.4fr}.calc-total{grid-column:1/-1;position:static}.footer-inner{grid-template-columns:1fr 1fr}.footer-inner>div:last-child{grid-column:1/-1}}
+@media(max-width:650px){.nav{padding:10px 14px}.logo{width:49px;height:49px}.brand{gap:9px}.brand-sub{font-size:.48rem;letter-spacing:1.6px}nav{display:none;position:absolute;top:100%;left:0;right:0;background:#030b15;padding:18px;flex-direction:column;border-bottom:1px solid var(--blue)}nav.open{display:flex}.menu-toggle{display:block}.hero{min-height:0;background-position:34% center}.hero-inner{padding:68px 18px 45px}.hero-points{grid-template-columns:1fr 1fr;gap:13px}.point{font-size:.65rem}.point i{width:34px;height:34px;font-size:.9rem}.section{padding:45px 15px}.promo-grid{grid-template-columns:1fr}.calc-grid{grid-template-columns:1fr}.calculator{padding:16px}.calc-total{grid-column:auto}.footer-inner{grid-template-columns:1fr;text-align:center}.footer-inner>div:last-child{grid-column:auto}.payments{justify-content:center}th,td{padding:11px 12px}}
+</style>
 </head>
 <body>
-
-  <!-- Cabeçalho / Navegação -->
-  <header>
-    <div class="nav-container">
-      <a href="#" class="brand-logo">
-        <img src="file_00000000f0d0820ea2aeb03ed181eb93.png" alt="CMG Details EstetiCar">
-        <div class="brand-title">
-          <span class="brand-gothic">CMG Details EstetiCar</span>
-          <span class="brand-subtext">Estética Automotiva Premium</span>
-        </div>
-      </a>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-badge">CUIDADO, PROTEÇÃO E VALORIZAÇÃO</div>
-    <h1>Seu Carro em <span class="highlight-cyan">Boas</span> <span class="highlight-pink">Mãos!</span></h1>
-    <p>"O brilho do seu auto em seus olhos..." Tratamento técnico detalhado para proteger e renovar o seu veículo.</p>
-    <div class="hero-buttons">
-      <a href="#calculadora" class="btn-main"><i class="fa-solid fa-calculator"></i> Simular Orçamento</a>
-      <a href="https://wa.me/5571991430784" target="_blank" class="btn-outline"><i class="fa-brands fa-whatsapp"></i> Falar Conosco</a>
-    </div>
-  </section>
-
-  <!-- Seção de Promoções e Fidelidade -->
-  <section class="container" id="promocoes">
-    <div class="section-title">
-      <h2>Vantagens Exclusivas</h2>
-      <p>Programas especiais de fidelidade e indicação para nossos clientes</p>
-    </div>
-
-    <div class="promo-grid">
-      <!-- Card Fidelidade Xpress -->
-      <div class="promo-card">
-        <div class="promo-icon">
-          <i class="fa-solid fa-car-wash"></i>
-        </div>
-        <h3>Fidelidade Xpress</h3>
-        <p>Faça <strong>5 lavagens técnicas Xpress</strong> e ganhe a <strong>6ª lavagem grátis!</strong></p>
-        <span class="highlight-badge">6ª Xpress Grátis</span>
-      </div>
-
-      <!-- Card Bónus Premium -->
-      <div class="promo-card">
-        <div class="promo-icon">
-          <i class="fa-solid fa-crown"></i>
-        </div>
-        <h3>Bónus Premium</h3>
-        <p>Realize <strong>1 lavagem técnica Premium</strong> e ganhe a <strong>1ª lavagem de manutenção</strong>.</p>
-        <span class="highlight-badge">Manutenção Grátis</span>
-      </div>
-
-      <!-- Card Indicação -->
-      <div class="promo-card">
-        <div class="promo-icon">
-          <i class="fa-solid fa-users"></i>
-        </div>
-        <h3>Cliente Indica Cliente</h3>
-        <p>Indique um amigo para cuidar do veículo conosco e ganhe <strong>10% de desconto</strong> em qualquer serviço desejado.</p>
-        <span class="highlight-badge">10% OFF</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Tabela de Preços -->
-  <section class="container" id="combos">
-    <div class="section-title">
-      <h2>Combos Proporcionais</h2>
-      <p>Valores ajustados de acordo com o porte do seu veículo</p>
-    </div>
-
-    <div class="prices-container">
-      <table class="price-table">
-        <thead>
-          <tr>
-            <th>Categoria</th>
-            <th>Lavagem Xpress</th>
-            <th>Lavagem Premium</th>
-            <th>Hig. Bancos</th>
-            <th>Hig. Interna</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Hatch</strong></td>
-            <td class="price-val">R$ 49,90</td>
-            <td class="price-val">R$ 119,90</td>
-            <td class="price-val">R$ 120,00</td>
-            <td class="price-val">R$ 199,90</td>
-          </tr>
-          <tr>
-            <td><strong>Sedan</strong></td>
-            <td class="price-val">R$ 59,90</td>
-            <td class="price-val">R$ 129,90</td>
-            <td class="price-val">R$ 140,00</td>
-            <td class="price-val">R$ 229,90</td>
-          </tr>
-          <tr>
-            <td><strong>SUV / Pickup</strong></td>
-            <td class="price-val">R$ 79,90</td>
-            <td class="price-val">R$ 139,90</td>
-            <td class="price-val">R$ 160,00</td>
-            <td class="price-val">R$ 259,90</td>
-          </tr>
-          <tr>
-            <td><strong>Utilitário</strong></td>
-            <td class="price-val">R$ 99,90</td>
-            <td class="price-val">R$ 149,90</td>
-            <td class="price-val">R$ 180,00</td>
-            <td class="price-val">R$ 289,90</td>
-          </tr>
-        </tbody>
-      </table>
-      <p style="margin-top: 15px; font-size: 0.85rem; color: var(--text-muted); text-align: center;">* Lavagem de Motor: Serviço individualizado e seguro por <strong>R$ 135,00</strong>.</p>
-    </div>
-  </section>
-
-  <!-- Calculadora Interativa -->
-  <section class="container" id="calculadora">
-    <div class="section-title">
-      <h2>Simulador de Orçamento</h2>
-      <p>Selecione seu modelo e os serviços para calcular em tempo real</p>
-    </div>
-
-    <div class="calc-box">
-      <!-- Porte -->
-      <div class="calc-group">
-        <label class="calc-label">1. Tipo do Veículo:</label>
-        <div class="car-types-grid">
-          <div class="car-btn active" onclick="selectCar('hatch', this)">Hatch</div>
-          <div class="car-btn" onclick="selectCar('sedan', this)">Sedan</div>
-          <div class="car-btn" onclick="selectCar('suv', this)">SUV / Pickup</div>
-          <div class="car-btn" onclick="selectCar('utilitario', this)">Utilitário</div>
-        </div>
-      </div>
-
-      <!-- Serviços -->
-      <div class="calc-group">
-        <label class="calc-label">2. Escolha os Serviços:</label>
-        <div class="checkbox-services">
-          
-          <!-- Lavagem Xpress com Acordeão -->
-          <div class="service-item-wrapper">
-            <div class="checkbox-item">
-              <input type="checkbox" value="xpress" id="serv-xpress" onchange="calculateTotal()">
-              <span class="checkbox-label-text" onclick="document.getElementById('serv-xpress').click()">Lavagem Xpress</span>
-              <button type="button" class="toggle-arrow" onclick="toggleDetails('details-xpress', this)">
-                <i class="fa-solid fa-chevron-down"></i>
-              </button>
-            </div>
-            <div class="service-details" id="details-xpress">
-              <ul>
-                <li><i class="fa-solid fa-check"></i> Pré-lavagem e Lavagem detalhada</li>
-                <li><i class="fa-solid fa-check"></i> Aspiração interna completa</li>
-                <li><i class="fa-solid fa-check"></i> Limpeza técnica do painel e portas</li>
-                <li><i class="fa-solid fa-check"></i> Aplicação de revitalizador de pneus (pretinho)</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Lavagem Premium com Acordeão -->
-          <div class="service-item-wrapper">
-            <div class="checkbox-item">
-              <input type="checkbox" value="premium" id="serv-premium" onchange="calculateTotal()">
-              <span class="checkbox-label-text" onclick="document.getElementById('serv-premium').click()">Lavagem Premium</span>
-              <button type="button" class="toggle-arrow" onclick="toggleDetails('details-premium', this)">
-                <i class="fa-solid fa-chevron-down"></i>
-              </button>
-            </div>
-            <div class="service-details" id="details-premium">
-              <ul>
-                <li><i class="fa-solid fa-star" style="color: var(--gold-primary);"></i> Tudo da Xpress +</li>
-                <li><i class="fa-solid fa-check"></i> Aspiração interna profunda</li>
-                <li><i class="fa-solid fa-check"></i> Condicionamento e revitalização de plásticos (UV)</li>
-                <li><i class="fa-solid fa-check"></i> Limpeza técnica de vidros internos e externos</li>
-                <li><i class="fa-solid fa-check"></i> Lavagem e proteção de caixas de rodas</li>
-                <li><i class="fa-solid fa-check"></i> Descontaminação básica e Cera de Alta Proteção</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Higienização dos Bancos -->
-          <div class="service-item-wrapper">
-            <div class="checkbox-item">
-              <input type="checkbox" value="bancos" id="serv-bancos" onchange="calculateTotal()">
-              <span class="checkbox-label-text" onclick="document.getElementById('serv-bancos').click()">Higienização dos Bancos</span>
-            </div>
-          </div>
-
-          <!-- Higienização Interna com Acordeão -->
-          <div class="service-item-wrapper">
-            <div class="checkbox-item">
-              <input type="checkbox" value="higienizacao" id="serv-hig" onchange="calculateTotal()">
-              <span class="checkbox-label-text" onclick="document.getElementById('serv-hig').click()">Higienização interna</span>
-              <button type="button" class="toggle-arrow" onclick="toggleDetails('details-hig', this)">
-                <i class="fa-solid fa-chevron-down"></i>
-              </button>
-            </div>
-            <div class="service-details" id="details-hig">
-              <ul>
-                <li><i class="fa-solid fa-check"></i> Painel</li>
-                <li><i class="fa-solid fa-check"></i> Portas</li>
-                <li><i class="fa-solid fa-check"></i> Teto</li>
-                <li><i class="fa-solid fa-check"></i> Carpete</li>
-                <li><i class="fa-solid fa-check"></i> Colunas laterais</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Lavagem de Motor -->
-          <div class="service-item-wrapper">
-            <div class="checkbox-item">
-              <input type="checkbox" value="motor" id="serv-motor" onchange="calculateTotal()">
-              <span class="checkbox-label-text" onclick="document.getElementById('serv-motor').click()">Lavagem de Motor (R$ 135)</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Total e Envio -->
-      <div class="calc-total-box">
-        <div>
-          <span style="font-size: 0.88rem; color: var(--text-muted); font-weight: 600;">Total Estimado:</span>
-          <div class="total-price" id="total-display">R$ 0,00</div>
-        </div>
-        <a href="#" id="whatsapp-btn" target="_blank" class="btn-main">
-          <i class="fa-brands fa-whatsapp"></i> Agendar pelo WhatsApp
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Rodapé Compacto -->
-  <footer>
-    <div style="font-family: 'UnifrakturMaguntia', cursive; font-size: 1.5rem; color: var(--text-main);">
-      CMG Details EstetiCar
-    </div>
-    <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 5px;">Acompanhe nosso trabalho nas redes sociais</p>
-
-    <!-- Botão Limpo do Instagram -->
-    <a href="https://www.instagram.com/cmg_details_esteticar?rpxt=MXZxMmE1czh2aXV5cQ==" target="_blank" class="social-btn">
-      <i class="fa-brands fa-instagram" style="font-size: 1.2rem;"></i> @cmg_details_esteticar
+<header>
+  <div class="nav">
+    <a class="brand" href="#inicio" aria-label="CMG Details EstetiCar - início">
+      <div class="logo">CMG<span>DETAILS ESTETICAR</span></div>
+      <div><div class="brand-name">CMG Details EstetiCar</div><div class="brand-sub">ESTÉTICA AUTOMOTIVA PREMIUM</div></div>
     </a>
-
-    <!-- Formas de Pagamento em Texto Breve -->
-    <div class="payment-compact">
-      <span><i class="fa-brands fa-pix"></i> Pix</span> • 
-      <span><i class="fa-solid fa-credit-card"></i> Cartão de Crédito</span> • 
-      <span><i class="fa-solid fa-receipt"></i> Cartão de Débito</span>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu"><i class="fa-solid fa-bars"></i></button>
+    <nav id="navLinks"><a href="#inicio">Início</a><a href="#servicos">Serviços</a><a href="#combos">Combos</a><a href="#calculadora">Orçamento</a><a href="#contato">Contato</a></nav>
+  </div>
+</header>
+<main>
+<section class="hero" id="inicio">
+  <div class="hero-inner">
+    <div>
+      <span class="eyebrow">CUIDADO • PROTEÇÃO • VALORIZAÇÃO</span>
+      <h1>Seu carro em <span class="blue">boas</span><br><span class="gold">mãos!</span></h1>
+      <p class="slogan">“O brilho do seu auto em seus olhos...”</p>
+      <p>Tratamento técnico e cuidado detalhado para valorizar seu veículo. Do dia a dia ao acabamento premium, seu carro merece atenção em cada detalhe.</p>
+      <div class="actions"><a class="btn btn-gold" href="#calculadora"><i class="fa-solid fa-calculator"></i> Simular orçamento</a><a class="btn btn-outline" href="https://wa.me/5571991430784" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Falar conosco</a></div>
     </div>
-
-    <div class="copyright">
-      &copy; CMG Details EstetiCar. Todos os direitos reservados.
+    <div class="hero-points">
+      <div class="point"><i class="fa-solid fa-sparkles"></i><span>Mais brilho<br>e proteção</span></div>
+      <div class="point"><i class="fa-solid fa-shield-halved"></i><span>Cuidado técnico<br>e seguro</span></div>
+      <div class="point"><i class="fa-solid fa-award"></i><span>Atenção aos<br>detalhes</span></div>
+      <div class="point"><i class="fa-solid fa-flask"></i><span>Produtos<br>selecionados</span></div>
     </div>
-  </footer>
-
-  <!-- Lógica da Calculadora e Sanfona -->
-  <script>
-    let selectedCarType = 'hatch';
-
-    const prices = {
-      hatch: { xpress: 49.90, premium: 119.90, bancos: 120.00, higienizacao: 199.90 },
-      sedan: { xpress: 59.90, premium: 129.90, bancos: 140.00, higienizacao: 229.90 },
-      suv: { xpress: 79.90, premium: 139.90, bancos: 160.00, higienizacao: 259.90 },
-      utilitario: { xpress: 99.90, premium: 149.90, bancos: 180.00, higienizacao: 289.90 },
-      motor: 135.00
-    };
-
-    function selectCar(type, element) {
-      document.querySelectorAll('.car-btn').forEach(btn => btn.classList.remove('active'));
-      element.classList.add('active');
-      selectedCarType = type;
-      calculateTotal();
-    }
-
-    function toggleDetails(elementId, btn) {
-      const details = document.getElementById(elementId);
-      if (details.style.display === "block") {
-        details.style.display = "none";
-        btn.classList.remove("open");
-      } else {
-        details.style.display = "block";
-        btn.classList.add("open");
-      }
-    }
-
-    function calculateTotal() {
-      let total = 0;
-      let selectedServices = [];
-
-      const servicesConfig = [
-        { id: 'serv-xpress', key: 'xpress', name: 'Lavagem Xpress' },
-        { id: 'serv-premium', key: 'premium', name: 'Lavagem Premium' },
-        { id: 'serv-bancos', key: 'bancos', name: 'Higienização dos Bancos' },
-        { id: 'serv-hig', key: 'higienizacao', name: 'Higienização interna' },
-        { id: 'serv-motor', key: 'motor', name: 'Lavagem de Motor' }
-      ];
-
-      servicesConfig.forEach(service => {
-        const input = document.getElementById(service.id);
-        if (input && input.checked) {
-          if (service.key === 'motor') {
-            total += prices.motor;
-          } else {
-            total += prices[selectedCarType][service.key];
-          }
-          selectedServices.push(service.name);
-        }
-      });
-
-      const totalDisplay = document.getElementById('total-display');
-      if (totalDisplay) {
-        totalDisplay.innerText = `R$ ${total.toFixed(2).replace('.', ',')}`;
-      }
-
-      const whatsappBtn = document.getElementById('whatsapp-btn');
-      if (whatsappBtn) {
-        const carLabels = {
-          hatch: 'Hatch',
-          sedan: 'Sedan',
-          suv: 'SUV / Pickup',
-          utilitario: 'Utilitário'
-        };
-
-        const listaServicos = selectedServices.length > 0 ? selectedServices.join(', ') : 'Nenhum serviço selecionado';
-        const mensagem = `Olá! Gostaria de agendar o seguinte orçamento:\n\n` +
-                         `🚗 *Veículo:* ${carLabels[selectedCarType]}\n` +
-                         `🛠️ *Serviços:* ${listaServicos}\n` +
-                         `💰 *Orçamento Final:* R$ ${total.toFixed(2).replace('.', ',')}`;
-
-        whatsappBtn.href = `https://wa.me/5571991430784?text=${encodeURIComponent(mensagem)}`;
-      }
-    }
-
-    document.addEventListener('DOMContentLoaded', calculateTotal);
-  </script>
+  </div>
+</section>
+<section class="section" id="servicos">
+  <div class="section-title"><h2>Vantagens <span class="blue">exclusivas</span></h2><p>Cuide do seu veículo e aproveite nossos benefícios para clientes</p></div>
+  <div class="promo-grid">
+    <article class="card"><div class="card-icon"><i class="fa-solid fa-car-side"></i></div><h3>Fidelidade Xpress</h3><p>Faça <strong>5 lavagens técnicas Xpress</strong> e ganhe a <strong>6ª lavagem grátis!</strong></p><span class="pill">6ª Xpress grátis</span></article>
+    <article class="card"><div class="card-icon gold"><i class="fa-solid fa-crown"></i></div><h3>Bônus Premium</h3><p>Realize <strong>1 lavagem técnica Premium</strong> e ganhe a primeira lavagem de manutenção.</p><span class="pill">Manutenção grátis</span></article>
+    <article class="card"><div class="card-icon"><i class="fa-solid fa-users"></i></div><h3>Cliente indica cliente</h3><p>Indique um amigo e ganhe <strong>10% de desconto</strong> em um serviço, conforme condições de agendamento.</p><span class="pill">10% OFF</span></article>
+  </div>
+</section>
+<section class="section" id="combos">
+  <div class="section-title"><h2>Combos <span class="blue">proporcionais</span></h2><p>Valores conforme a categoria do veículo</p></div>
+  <div class="price-wrap"><table>
+    <thead><tr><th>Categoria</th><th>Lavagem Xpress</th><th>Lavagem Premium</th><th>Higienização dos bancos</th><th>Higienização interna</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Hatch</strong></td><td class="price">R$ 49,90</td><td class="price">R$ 119,90</td><td class="price">R$ 120,00</td><td class="price">R$ 199,90</td></tr>
+      <tr><td><strong>Sedan</strong></td><td class="price">R$ 59,90</td><td class="price">R$ 129,90</td><td class="price">R$ 140,00</td><td class="price">R$ 229,90</td></tr>
+      <tr><td><strong>SUV / Pickup</strong></td><td class="price">R$ 79,90</td><td class="price">R$ 139,90</td><td class="price">R$ 160,00</td><td class="price">R$ 259,90</td></tr>
+      <tr><td><strong>Utilitário</strong></td><td class="price">R$ 99,90</td><td class="price">R$ 149,90</td><td class="price">R$ 180,00</td><td class="price">R$ 289,90</td></tr>
+    </tbody>
+  </table><div class="note">Os valores são estimativas de referência e podem variar conforme o estado do veículo e a avaliação prévia.</div></div>
+</section>
+<section class="section" id="calculadora">
+  <div class="section-title"><h2>Simulador <span class="blue">de orçamento</span></h2><p>Selecione o porte e os serviços para calcular uma estimativa em tempo real</p></div>
+  <div class="calculator">
+    <div class="calc-grid">
+      <div><div class="calc-label">1. Tipo do veículo</div><div class="car-grid">
+        <button class="car-btn active" data-car="hatch"><i class="fa-solid fa-car-side"></i>Hatch</button>
+        <button class="car-btn" data-car="sedan"><i class="fa-solid fa-car"></i>Sedan</button>
+        <button class="car-btn" data-car="suv"><i class="fa-solid fa-truck-pickup"></i>SUV / Pickup</button>
+        <button class="car-btn" data-car="utilitario"><i class="fa-solid fa-van-shuttle"></i>Utilitário</button>
+      </div></div>
+      <div><div class="calc-label">2. Escolha os serviços</div><div class="services">
+        <div class="service"><div class="service-row"><input type="checkbox" id="xpress" value="xpress"><label for="xpress">Lavagem técnica Xpress</label><button class="toggle" data-details="d-xpress" aria-label="Detalhes da Xpress"><i class="fa-solid fa-chevron-down"></i></button></div><div class="details" id="d-xpress"><ul><li>Lavagem técnica externa</li><li>Aspiração interna</li><li>Limpeza interna básica de painel e portas</li><li>Revitalização dos pneus</li></ul></div></div>
+        <div class="service"><div class="service-row"><input type="checkbox" id="premium" value="premium"><label for="premium">Lavagem técnica Premium</label><button class="toggle" data-details="d-premium" aria-label="Detalhes da Premium"><i class="fa-solid fa-chevron-down"></i></button></div><div class="details" id="d-premium"><ul><li>Itens da Xpress</li><li>Limpeza interna detalhada e plásticos</li><li>Limpeza de vidros</li><li>Limpeza e proteção de caixas de rodas e pneus</li><li>Descontaminação básica para aplicação de cera</li></ul></div></div>
+        <div class="service"><div class="service-row"><input type="checkbox" id="bancos" value="bancos"><label for="bancos">Higienização dos bancos</label></div></div>
+        <div class="service"><div class="service-row"><input type="checkbox" id="higienizacao" value="higienizacao"><label for="higienizacao">Higienização interna completa</label><button class="toggle" data-details="d-hig" aria-label="Detalhes da higienização"><i class="fa-solid fa-chevron-down"></i></button></div><div class="details" id="d-hig"><ul><li>Painel e portas</li><li>Teto e colunas laterais</li><li>Carpete e áreas internas acessíveis</li></ul></div></div>
+      </div></div>
+      <div class="calc-total"><div class="total-label">Total estimado</div><div class="total" id="total">R$ 0,00</div><a class="btn btn-whats" id="whatsappBtn" href="https://wa.me/5571991430784" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Agendar pelo WhatsApp</a><p class="calc-hint">Confirme o valor final após avaliação do veículo.</p></div>
+    </div>
+  </div>
+</section>
+</main>
+<footer id="contato"><div class="footer-inner">
+  <div><div class="footer-brand">CMG Details EstetiCar</div><p>Estética automotiva premium</p><p class="slogan">O brilho do seu auto em seus olhos...</p></div>
+  <div><p>Acompanhe nosso trabalho nas redes sociais</p><a class="social" href="https://www.instagram.com/cmg_details_esteticar/" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> @cmg_details_esteticar</a><p><a class="social" href="https://wa.me/5571991430784" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> (71) 99143-0784</a></p></div>
+  <div><strong>Formas de pagamento</strong><div class="payments"><span><i class="fa-brands fa-pix"></i> Pix</span><span><i class="fa-regular fa-credit-card"></i> Crédito</span><span><i class="fa-regular fa-credit-card"></i> Débito</span></div></div>
+</div><div class="copyright">© <span id="year"></span> CMG Details EstetiCar. Todos os direitos reservados.</div></footer>
+<script>
+const prices={
+ hatch:{xpress:49.90,premium:119.90,bancos:120,higienizacao:199.90},
+ sedan:{xpress:59.90,premium:129.90,bancos:140,higienizacao:229.90},
+ suv:{xpress:79.90,premium:139.90,bancos:160,higienizacao:259.90},
+ utilitario:{xpress:99.90,premium:149.90,bancos:180,higienizacao:289.90}
+};
+const carNames={hatch:'Hatch',sedan:'Sedan',suv:'SUV / Pickup',utilitario:'Utilitário'};
+let selectedCar='hatch';
+const money=n=>n.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+function calculate(){
+ let total=0;const selected=[];
+ document.querySelectorAll('.services input[type="checkbox"]').forEach(input=>{
+  if(input.checked){total+=prices[selectedCar][input.value]||0;selected.push(input.labels[0].textContent.trim());}
+ });
+ document.getElementById('total').textContent=money(total);
+ const message=`Olá! Gostaria de agendar um orçamento na CMG Details EstetiCar.%0A%0A🚘 Veículo: ${encodeURIComponent(carNames[selectedCar])}%0A🧽 Serviços: ${encodeURIComponent(selected.join(', ')||'Ainda vou escolher os serviços')}%0A💰 Total estimado: ${encodeURIComponent(money(total))}%0A%0APoderia confirmar a disponibilidade?`;
+ document.getElementById('whatsappBtn').href='https://wa.me/5571991430784?text='+message;
+}
+document.querySelectorAll('.car-btn').forEach(btn=>btn.addEventListener('click',()=>{
+ document.querySelectorAll('.car-btn').forEach(b=>b.classList.remove('active'));
+ btn.classList.add('active');selectedCar=btn.dataset.car;calculate();
+}));
+document.querySelectorAll('.services input').forEach(input=>input.addEventListener('change',calculate));
+document.querySelectorAll('.toggle').forEach(btn=>btn.addEventListener('click',()=>{
+ const panel=document.getElementById(btn.dataset.details);panel.classList.toggle('open');
+ btn.innerHTML=panel.classList.contains('open')?'<i class="fa-solid fa-chevron-up"></i>':'<i class="fa-solid fa-chevron-down"></i>';
+}));
+document.getElementById('menuToggle').addEventListener('click',()=>document.getElementById('navLinks').classList.toggle('open'));
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
+document.getElementById('year').textContent=new Date().getFullYear();
+calculate();
+</script>
 </body>
 </html>
