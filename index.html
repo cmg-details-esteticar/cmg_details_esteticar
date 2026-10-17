@@ -221,10 +221,10 @@
       margin-top: 5px;
     }
 
-    /* Cards de Promoção e Fidelidade */
+    /* Cards de Promoção e Fidelidade em Lado a Lado (Grid Flexível) */
     .promo-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
 
@@ -234,7 +234,10 @@
       border-radius: 12px;
       padding: 25px;
       text-align: center;
-      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
       transition: all 0.3s ease;
     }
 
@@ -251,19 +254,19 @@
     }
 
     .promo-card h3 {
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       color: #FFF;
       margin-bottom: 10px;
     }
 
     .promo-card p {
-      font-size: 0.88rem;
+      font-size: 0.85rem;
       color: var(--text-muted);
+      margin-bottom: 15px;
     }
 
     .highlight-badge {
       display: inline-block;
-      margin-top: 10px;
       background: rgba(0, 240, 255, 0.1);
       color: var(--cyan-neon);
       border: 1px solid var(--cyan-neon);
@@ -531,6 +534,12 @@
     }
 
     /* Responsividade */
+    @media (max-width: 900px) {
+      .promo-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     @media (max-width: 600px) {
       .hero h1 { font-size: 1.6rem; }
       .calc-total-box { flex-direction: column; text-align: center; }
@@ -575,14 +584,24 @@
     </div>
 
     <div class="promo-grid">
-      <!-- Card Fidelidade -->
+      <!-- Card Fidelidade Xpress -->
       <div class="promo-card">
         <div class="promo-icon">
-          <i class="fa-solid fa-gift"></i>
+          <i class="fa-solid fa-car-wash"></i>
         </div>
-        <h3>Programa de Fidelidade</h3>
-        <p>Faça <strong>1 Lavagem Técnica Premium</strong> e <strong>2 Lavagens Técnicas Xpress</strong> e ganhe a <strong>3ª Xpress grátis!</strong></p>
-        <span class="highlight-badge">3ª Xpress Grátis</span>
+        <h3>Fidelidade Xpress</h3>
+        <p>Faça <strong>5 lavagens técnicas Xpress</strong> e ganhe a <strong>6ª lavagem grátis!</strong></p>
+        <span class="highlight-badge">6ª Xpress Grátis</span>
+      </div>
+
+      <!-- Card Bónus Premium -->
+      <div class="promo-card">
+        <div class="promo-icon">
+          <i class="fa-solid fa-crown"></i>
+        </div>
+        <h3>Bónus Premium</h3>
+        <p>Realize <strong>1 lavagem técnica Premium</strong> e ganhe a <strong>1ª lavagem de manutenção</strong>.</p>
+        <span class="highlight-badge">Manutenção Grátis</span>
       </div>
 
       <!-- Card Indicação -->
@@ -591,7 +610,7 @@
           <i class="fa-solid fa-users"></i>
         </div>
         <h3>Cliente Indica Cliente</h3>
-        <p>Indique um amigo para cuidar do veículo conosco e ganhe um desconto especial em qualquer serviço desejado.</p>
+        <p>Indique um amigo para cuidar do veículo connosco e ganhe <strong>10% de desconto</strong> em qualquer serviço desejado.</p>
         <span class="highlight-badge">10% OFF</span>
       </div>
     </div>
