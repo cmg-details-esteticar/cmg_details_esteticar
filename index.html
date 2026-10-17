@@ -202,12 +202,12 @@
     .container {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 30px 20px;
     }
 
     .section-title {
       text-align: center;
-      margin-bottom: 35px;
+      margin-bottom: 25px;
     }
 
     .section-title h2 {
@@ -226,18 +226,18 @@
       font-weight: 500;
     }
 
-    /* Cards de Promoção e Fidelidade Lado a Lado */
+    /* Cards de Promoção Diminuídos e Lado a Lado */
     .promo-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 12px;
     }
 
     .promo-card {
       background: var(--bg-card);
       border: 1px solid var(--border-subtle);
-      border-radius: 12px;
-      padding: 25px;
+      border-radius: 10px;
+      padding: 16px 14px;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -249,27 +249,28 @@
 
     .promo-card:hover {
       border-color: var(--cyan-neon);
-      transform: translateY(-3px);
+      transform: translateY(-2px);
       box-shadow: var(--shadow-md);
     }
 
     .promo-icon {
-      font-size: 2.2rem;
+      font-size: 1.5rem;
       color: var(--gold-primary);
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
 
     .promo-card h3 {
-      font-size: 1.1rem;
+      font-size: 0.95rem;
       color: var(--text-main);
-      margin-bottom: 10px;
+      margin-bottom: 6px;
       font-weight: 700;
     }
 
     .promo-card p {
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
-      margin-bottom: 15px;
+      margin-bottom: 10px;
+      line-height: 1.35;
     }
 
     .highlight-badge {
@@ -277,10 +278,10 @@
       background: #E0F7FA;
       color: var(--cyan-neon);
       border: 1px solid var(--cyan-neon);
-      padding: 4px 12px;
-      border-radius: 12px;
+      padding: 3px 10px;
+      border-radius: 10px;
       font-weight: 700;
-      font-size: 0.8rem;
+      font-size: 0.73rem;
     }
 
     /* Tabela de Preços Proporcionais */
@@ -534,13 +535,31 @@
     }
 
     /* Responsividade */
-    @media (max-width: 900px) {
+    @media (max-width: 768px) {
       .promo-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+      }
+      .promo-card {
+        padding: 12px 8px;
+      }
+      .promo-card h3 {
+        font-size: 0.85rem;
+      }
+      .promo-card p {
+        font-size: 0.72rem;
+      }
+      .highlight-badge {
+        font-size: 0.65rem;
+        padding: 2px 6px;
       }
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 550px) {
+      .promo-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
       .brand-gothic { font-size: 1.6rem; }
       .brand-subtext { font-size: 0.58rem; }
       .hero h1 { font-size: 1.6rem; }
@@ -576,7 +595,7 @@
     </div>
   </section>
 
-  <!-- Seção de Promoções e Fidelidade -->
+  <!-- Seção de Promoções e Fidelidade Lado a Lado / Compactas -->
   <section class="container" id="promocoes">
     <div class="section-title">
       <h2>Vantagens Exclusivas</h2>
@@ -590,7 +609,7 @@
           <i class="fa-solid fa-car-wash"></i>
         </div>
         <h3>Fidelidade Xpress</h3>
-        <p>Faça <strong>5 lavagens técnicas Xpress</strong> e ganhe a <strong>6ª lavagem grátis!</strong></p>
+        <p>Faça <strong>5 lavagens Xpress</strong> e ganhe a <strong>6ª grátis!</strong></p>
         <span class="highlight-badge">6ª Xpress Grátis</span>
       </div>
 
@@ -600,7 +619,7 @@
           <i class="fa-solid fa-crown"></i>
         </div>
         <h3>Bónus Premium</h3>
-        <p>Realize <strong>1 lavagem técnica Premium</strong> e ganhe a <strong>1ª lavagem de manutenção</strong>.</p>
+        <p>Realize <strong>1 lavagem Premium</strong> e ganhe a <strong>1ª manutenção</strong>.</p>
         <span class="highlight-badge">Manutenção Grátis</span>
       </div>
 
@@ -609,8 +628,8 @@
         <div class="promo-icon">
           <i class="fa-solid fa-users"></i>
         </div>
-        <h3>Cliente Indica Cliente</h3>
-        <p>Indique um amigo para cuidar do veículo conosco e ganhe <strong>10% de desconto</strong> em qualquer serviço desejado.</p>
+        <h3>Indique um Amigo</h3>
+        <p>Indique um amigo para cuidar do carro e ganhe <strong>10% OFF</strong>.</p>
         <span class="highlight-badge">10% OFF</span>
       </div>
     </div>
