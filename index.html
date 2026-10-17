@@ -525,7 +525,7 @@
             <th>Lavagem Xpress</th>
             <th>Lavagem Premium</th>
             <th>Hig. Bancos</th>
-            <th>Hig. Completa</th>
+            <th>Hig. Interna</th>
           </tr>
         </thead>
         <tbody>
@@ -663,11 +663,23 @@
             </div>
           </div>
 
-          <!-- Higienização Completa -->
+          <!-- Higienização Interna com Acordeão -->
           <div class="service-item-wrapper">
             <div class="checkbox-item">
               <input type="checkbox" value="higienizacao" id="serv-hig" onchange="calculateTotal()">
-              <span class="checkbox-label-text" onclick="document.getElementById('serv-hig').click()">Higienização Completa</span>
+              <span class="checkbox-label-text" onclick="document.getElementById('serv-hig').click()">Higienização interna</span>
+              <button type="button" class="toggle-arrow" onclick="toggleDetails('details-hig', this)">
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+            </div>
+            <div class="service-details" id="details-hig">
+              <ul>
+                <li><i class="fa-solid fa-check"></i> Painel</li>
+                <li><i class="fa-solid fa-check"></i> Portas</li>
+                <li><i class="fa-solid fa-check"></i> Teto</li>
+                <li><i class="fa-solid fa-check"></i> Carpete</li>
+                <li><i class="fa-solid fa-check"></i> Colunas laterais</li>
+              </ul>
             </div>
           </div>
 
@@ -750,7 +762,7 @@
         { id: 'serv-xpress', key: 'xpress', name: 'Lavagem Xpress' },
         { id: 'serv-premium', key: 'premium', name: 'Lavagem Premium' },
         { id: 'serv-bancos', key: 'bancos', name: 'Higienização dos Bancos' },
-        { id: 'serv-hig', key: 'higienizacao', name: 'Higienização Completa' },
+        { id: 'serv-hig', key: 'higienizacao', name: 'Higienização interna' },
         { id: 'serv-motor', key: 'motor', name: 'Lavagem de Motor' }
       ];
 
