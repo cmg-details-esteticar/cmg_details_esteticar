@@ -69,9 +69,11 @@
       text-decoration: none;
     }
 
-    .brand-logo svg {
+    .brand-logo img {
       width: 45px;
       height: 45px;
+      border-radius: 50%;
+      object-fit: cover;
     }
 
     .brand-title {
@@ -473,11 +475,7 @@
   <header>
     <div class="nav-container">
       <a href="#" class="brand-logo">
-        <svg viewBox="0 0 100 100">
-          <circle cx="50" cy="50" r="45" fill="none" stroke="#D4AF37" stroke-width="3"/>
-          <path d="M 25 50 Q 50 20 75 50" fill="none" stroke="#00F0FF" stroke-width="4"/>
-          <text x="50" y="65" font-family="'Cinzel', serif" font-weight="bold" font-size="22" fill="#FFF" text-anchor="middle">CMG</text>
-        </svg>
+        <img src="file_00000000f0d0820ea2aeb03ed181eb93.png" alt="CMG Details EstetiCar">
         <div class="brand-title">
           CMG DETAILS
           <span>ESTETICAR</span>
@@ -700,54 +698,4 @@
       document.querySelectorAll('.car-btn').forEach(btn => btn.classList.remove('active'));
       element.classList.add('active');
       selectedCarType = type;
-      calculateTotal();
-    }
-
-    function calculateTotal() {
-      let total = 0;
-      let selectedServicesList = [];
-
-      const currentPrices = prices[selectedCarType];
-
-      if (document.getElementById('serv-xpress').checked) {
-        total += currentPrices.xpress;
-        selectedServicesList.push("Lavagem Xpress");
-      }
-      if (document.getElementById('serv-premium').checked) {
-        total += currentPrices.premium;
-        selectedServicesList.push("Lavagem Premium");
-      }
-      if (document.getElementById('serv-bancos').checked) {
-        total += currentPrices.bancos;
-        selectedServicesList.push("Higienização dos Bancos");
-      }
-      if (document.getElementById('serv-hig').checked) {
-        total += currentPrices.higienizacao;
-        selectedServicesList.push("Higienização Completa");
-      }
-      if (document.getElementById('serv-motor').checked) {
-        total += prices.motor;
-        selectedServicesList.push("Lavagem de Motor");
-      }
-
-      document.getElementById('total-display').innerText = `R$ ${total.toFixed(2).replace('.', ',')}`;
-
-      // Gerar link do WhatsApp
-      const carNames = { hatch: 'Hatch', sedan: 'Sedan', suv: 'SUV / Pickup', utilitario: 'Utilitário' };
-      const phone = "5571991430784";
-      let msg = `Olá! Gostaria de agendar um serviço para meu carro (${carNames[selectedCarType]}):\n`;
-      
-      if (selectedServicesList.length > 0) {
-        msg += `Serviços: ${selectedServicesList.join(', ')}\n`;
-        msg += `Total estimado: R$ ${total.toFixed(2).replace('.', ',')}`;
-      } else {
-        msg += `Gostaria de obter mais informações sobre os serviços.`;
-      }
-
-      document.getElementById('whatsapp-btn').href = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
-    }
-
-    calculateTotal();
-  </script>
-</body>
-</html>
+      calculate
