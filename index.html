@@ -8,7 +8,7 @@
   <!-- Fontes Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Montserrat:wght@400;500;600;700;800&family=Cinzel:wght@700;800&display=swap" rel="stylesheet">
   
   <!-- Ícones Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -45,7 +45,7 @@
 
     /* Cabeçalho / Navbar */
     header {
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(255, 255, 255, 0.98);
       backdrop-filter: blur(10px);
       position: fixed;
       top: 0;
@@ -53,7 +53,7 @@
       width: 100%;
       z-index: 1000;
       border-bottom: 1px solid var(--border-subtle);
-      padding: 12px 24px;
+      padding: 10px 24px;
       box-shadow: var(--shadow-sm);
     }
 
@@ -61,65 +61,62 @@
       max-width: 1200px;
       margin: 0 auto;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
     }
 
     .brand-logo {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 16px;
       text-decoration: none;
     }
 
+    /* Logo Mais Visível */
     .brand-logo img {
-      width: 45px;
-      height: 45px;
+      width: 68px;
+      height: 68px;
       border-radius: 50%;
       object-fit: cover;
-      border: 1px solid var(--border-subtle);
+      border: 2px solid var(--gold-primary);
+      box-shadow: 0 0 12px rgba(184, 134, 11, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .brand-logo:hover img {
+      transform: scale(1.05);
     }
 
     .brand-title {
-      font-family: 'Cinzel', serif;
-      font-size: 1.2rem;
-      font-weight: 800;
-      color: var(--text-main);
-      line-height: 1.1;
-    }
-
-    .brand-title span {
-      display: block;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.7rem;
-      color: var(--cyan-neon);
-      letter-spacing: 2px;
-      font-weight: 700;
-    }
-
-    .btn-contact-header {
-      background: linear-gradient(135deg, #D4AF37, var(--gold-primary));
-      color: #FFF;
-      padding: 8px 18px;
-      border-radius: 20px;
-      font-weight: 700;
-      font-size: 0.85rem;
-      text-decoration: none;
       display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: all 0.3s ease;
-      box-shadow: 0 2px 10px rgba(184, 134, 11, 0.2);
+      flex-direction: column;
+      align-items: flex-start;
+      line-height: 1.05;
     }
 
-    .btn-contact-header:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(184, 134, 11, 0.4);
+    /* Fonte Gótica para o Nome Principal */
+    .brand-gothic {
+      font-family: 'UnifrakturMaguntia', cursive;
+      font-size: 2.1rem;
+      color: var(--text-main);
+      letter-spacing: 0.5px;
+      text-shadow: 1px 1px 0px rgba(184, 134, 11, 0.2);
     }
 
-    /* Hero Section com Fundo Claro e Imagem suave */
+    /* Fonte Normal / Limpa para a Estética Automotiva */
+    .brand-subtext {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 800;
+      color: var(--cyan-neon);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+
+    /* Hero Section */
     .hero {
-      padding: 150px 20px 80px;
+      padding: 160px 20px 80px;
       text-align: center;
       background: linear-gradient(180deg, rgba(255, 255, 255, 0.88) 0%, rgba(248, 250, 252, 0.98) 100%), 
                   url('file_00000000f0d0820ea2aeb03ed181eb93.png') center/cover no-repeat;
@@ -561,6 +558,8 @@
     }
 
     @media (max-width: 600px) {
+      .brand-gothic { font-size: 1.6rem; }
+      .brand-subtext { font-size: 0.58rem; }
       .hero h1 { font-size: 1.6rem; }
       .calc-total-box { flex-direction: column; text-align: center; }
       .price-table th, .price-table td { padding: 10px 6px; font-size: 0.82rem; }
@@ -575,12 +574,9 @@
       <a href="#" class="brand-logo">
         <img src="file_00000000f0d0820ea2aeb03ed181eb93.png" alt="CMG Details EstetiCar">
         <div class="brand-title">
-          CMG DETAILS
-          <span>ESTETICAR</span>
+          <span class="brand-gothic">CMG Details EstetiCar</span>
+          <span class="brand-subtext">Estética Automotiva Premium</span>
         </div>
-      </a>
-      <a href="https://wa.me/5571991430784" target="_blank" class="btn-contact-header">
-        <i class="fa-brands fa-whatsapp"></i> Agendar
       </a>
     </div>
   </header>
@@ -835,8 +831,8 @@
 
   <!-- Rodapé -->
   <footer>
-    <div style="font-family: 'Cinzel', serif; font-size: 1.2rem; font-weight: 800; color: var(--text-main);">
-      CMG DETAILS <span style="color: var(--cyan-neon); font-size: 0.8rem; font-family: 'Montserrat';">ESTETICAR</span>
+    <div style="font-family: 'UnifrakturMaguntia', cursive; font-size: 1.5rem; color: var(--text-main);">
+      CMG Details EstetiCar
     </div>
     <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 5px;">Acompanhe nosso trabalho nas redes sociais</p>
 
