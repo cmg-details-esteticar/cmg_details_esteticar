@@ -72,7 +72,6 @@
       text-decoration: none;
     }
 
-    /* Logo Mais Visível */
     .brand-logo img {
       width: 68px;
       height: 68px;
@@ -94,7 +93,6 @@
       line-height: 1.05;
     }
 
-    /* Fonte Gótica para o Nome Principal */
     .brand-gothic {
       font-family: 'UnifrakturMaguntia', cursive;
       font-size: 2.1rem;
@@ -103,7 +101,6 @@
       text-shadow: 1px 1px 0px rgba(184, 134, 11, 0.2);
     }
 
-    /* Fonte Normal / Limpa para a Estética Automotiva */
     .brand-subtext {
       font-family: 'Montserrat', sans-serif;
       font-size: 0.68rem;
@@ -226,18 +223,25 @@
       font-weight: 500;
     }
 
-    /* Cards de Promoção Diminuídos e Lado a Lado */
+    /* VANTAGENS EXCLUSIVAS: LADO A LADO FIXO EM QUALQUER ECRÃ */
+    .promo-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      padding-bottom: 5px;
+    }
+
     .promo-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(220px, 1fr));
       gap: 12px;
+      width: 100%;
     }
 
     .promo-card {
       background: var(--bg-card);
       border: 1px solid var(--border-subtle);
-      border-radius: 10px;
-      padding: 16px 14px;
+      border-radius: 12px;
+      padding: 18px 12px;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -245,6 +249,7 @@
       align-items: center;
       transition: all 0.3s ease;
       box-shadow: var(--shadow-sm);
+      min-height: 180px;
     }
 
     .promo-card:hover {
@@ -254,7 +259,7 @@
     }
 
     .promo-icon {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       color: var(--gold-primary);
       margin-bottom: 8px;
     }
@@ -267,7 +272,7 @@
     }
 
     .promo-card p {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: var(--text-muted);
       margin-bottom: 10px;
       line-height: 1.35;
@@ -281,7 +286,7 @@
       padding: 3px 10px;
       border-radius: 10px;
       font-weight: 700;
-      font-size: 0.73rem;
+      font-size: 0.72rem;
     }
 
     /* Tabela de Preços Proporcionais */
@@ -502,7 +507,6 @@
       transform: scale(1.05);
     }
 
-    /* Formas de Pagamento em Texto Compacto */
     .payment-compact {
       font-size: 0.85rem;
       color: var(--text-muted);
@@ -534,38 +538,17 @@
       margin-top: 15px;
     }
 
-    /* Responsividade */
-    @media (max-width: 768px) {
-      .promo-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 8px;
-      }
-      .promo-card {
-        padding: 12px 8px;
-      }
-      .promo-card h3 {
-        font-size: 0.85rem;
-      }
-      .promo-card p {
-        font-size: 0.72rem;
-      }
-      .highlight-badge {
-        font-size: 0.65rem;
-        padding: 2px 6px;
-      }
-    }
-
-    @media (max-width: 550px) {
-      .promo-grid {
-        grid-template-columns: 1fr;
-        gap: 10px;
-      }
+    /* Responsividade Geral */
+    @media (max-width: 600px) {
       .brand-gothic { font-size: 1.6rem; }
       .brand-subtext { font-size: 0.58rem; }
       .hero h1 { font-size: 1.6rem; }
       .calc-total-box { flex-direction: column; text-align: center; }
       .price-table th, .price-table td { padding: 10px 6px; font-size: 0.82rem; }
       .payment-compact { flex-direction: column; gap: 6px; }
+      .promo-grid {
+        grid-template-columns: repeat(3, 170px);
+      }
     }
   </style>
 </head>
@@ -595,42 +578,44 @@
     </div>
   </section>
 
-  <!-- Seção de Promoções e Fidelidade Lado a Lado / Compactas -->
+  <!-- Seção de Promoções e Fidelidade Lado a Lado -->
   <section class="container" id="promocoes">
     <div class="section-title">
       <h2>Vantagens Exclusivas</h2>
       <p>Programas especiais de fidelidade e indicação para nossos clientes</p>
     </div>
 
-    <div class="promo-grid">
-      <!-- Card Fidelidade Xpress -->
-      <div class="promo-card">
-        <div class="promo-icon">
-          <i class="fa-solid fa-car-wash"></i>
+    <div class="promo-wrapper">
+      <div class="promo-grid">
+        <!-- Card Fidelidade Xpress -->
+        <div class="promo-card">
+          <div>
+            <div class="promo-icon"><i class="fa-solid fa-car-wash"></i></div>
+            <h3>Fidelidade Xpress</h3>
+            <p>Faça <strong>5 lavagens Xpress</strong> e ganhe a <strong>6ª grátis!</strong></p>
+          </div>
+          <span class="highlight-badge">6ª Xpress Grátis</span>
         </div>
-        <h3>Fidelidade Xpress</h3>
-        <p>Faça <strong>5 lavagens Xpress</strong> e ganhe a <strong>6ª grátis!</strong></p>
-        <span class="highlight-badge">6ª Xpress Grátis</span>
-      </div>
 
-      <!-- Card Bónus Premium -->
-      <div class="promo-card">
-        <div class="promo-icon">
-          <i class="fa-solid fa-crown"></i>
+        <!-- Card Bónus Premium -->
+        <div class="promo-card">
+          <div>
+            <div class="promo-icon"><i class="fa-solid fa-crown"></i></div>
+            <h3>Bónus Premium</h3>
+            <p>Realize <strong>1 lavagem Premium</strong> e ganhe a <strong>1ª manutenção</strong>.</p>
+          </div>
+          <span class="highlight-badge">Manutenção Grátis</span>
         </div>
-        <h3>Bónus Premium</h3>
-        <p>Realize <strong>1 lavagem Premium</strong> e ganhe a <strong>1ª manutenção</strong>.</p>
-        <span class="highlight-badge">Manutenção Grátis</span>
-      </div>
 
-      <!-- Card Indicação -->
-      <div class="promo-card">
-        <div class="promo-icon">
-          <i class="fa-solid fa-users"></i>
+        <!-- Card Indicação -->
+        <div class="promo-card">
+          <div>
+            <div class="promo-icon"><i class="fa-solid fa-users"></i></div>
+            <h3>Indique um Amigo</h3>
+            <p>Indique um amigo para cuidar do carro e ganhe <strong>10% OFF</strong>.</p>
+          </div>
+          <span class="highlight-badge">10% OFF</span>
         </div>
-        <h3>Indique um Amigo</h3>
-        <p>Indique um amigo para cuidar do carro e ganhe <strong>10% OFF</strong>.</p>
-        <span class="highlight-badge">10% OFF</span>
       </div>
     </div>
   </section>
