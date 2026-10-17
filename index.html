@@ -216,83 +216,6 @@
       margin-top: 5px;
     }
 
-    /* Cards de Serviços Principais */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 25px;
-    }
-
-    .service-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 12px;
-      padding: 30px;
-      transition: all 0.3s ease;
-      position: relative;
-    }
-
-    .service-card:hover {
-      border-color: var(--gold-primary);
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-    }
-
-    .service-card.featured {
-      border-color: var(--cyan-neon);
-      box-shadow: 0 0 15px rgba(0, 240, 255, 0.15);
-    }
-
-    .card-badge {
-      position: absolute;
-      top: -12px;
-      right: 20px;
-      background: var(--cyan-neon);
-      color: #000;
-      font-size: 0.7rem;
-      font-weight: 800;
-      padding: 3px 12px;
-      border-radius: 10px;
-      text-transform: uppercase;
-    }
-
-    .card-header-title {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-
-    .card-header-title i {
-      font-size: 1.5rem;
-      color: var(--gold-primary);
-    }
-
-    .card-header-title h3 {
-      font-size: 1.3rem;
-      color: #FFF;
-    }
-
-    .service-list {
-      list-style: none;
-      margin-bottom: 20px;
-    }
-
-    .service-list li {
-      margin-bottom: 10px;
-      color: var(--text-main);
-      font-size: 0.88rem;
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-    }
-
-    .service-list li i {
-      color: var(--cyan-neon);
-      margin-top: 4px;
-      font-size: 0.8rem;
-    }
-
     /* Tabela de Preços Proporcionais */
     .prices-container {
       background: var(--bg-card);
@@ -420,31 +343,82 @@
 
     .checkbox-services {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 12px;
     }
 
-    .checkbox-item {
+    .service-item-wrapper {
       background: #181B24;
-      padding: 12px 15px;
       border-radius: 8px;
+      border: 1px solid transparent;
+      transition: all 0.2s ease;
+      overflow: hidden;
+    }
+
+    .service-item-wrapper:hover {
+      border-color: rgba(0, 240, 255, 0.3);
+    }
+
+    .checkbox-item {
+      padding: 12px 15px;
       display: flex;
       align-items: center;
       gap: 10px;
       cursor: pointer;
       font-size: 0.88rem;
-      border: 1px solid transparent;
-      transition: all 0.2s ease;
-    }
-
-    .checkbox-item:hover {
-      border-color: rgba(0, 240, 255, 0.3);
+      user-select: none;
+      width: 100%;
     }
 
     .checkbox-item input {
       accent-color: var(--cyan-neon);
       width: 16px;
       height: 16px;
+      cursor: pointer;
+    }
+
+    .checkbox-label-text {
+      flex-grow: 1;
+    }
+
+    .toggle-arrow {
+      background: none;
+      border: none;
+      color: var(--gold-primary);
+      font-size: 0.9rem;
+      cursor: pointer;
+      padding: 4px 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .toggle-arrow.open {
+      transform: rotate(180deg);
+    }
+
+    .service-details {
+      display: none;
+      padding: 10px 15px 15px 35px;
+      background: rgba(0, 0, 0, 0.2);
+      border-top: 1px dashed rgba(255, 255, 255, 0.08);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .service-details ul {
+      list-style: none;
+    }
+
+    .service-details li {
+      margin-bottom: 6px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .service-details li i {
+      color: var(--cyan-neon);
+      font-size: 0.75rem;
+      margin-top: 3px;
     }
 
     .calc-total-box {
@@ -536,63 +510,8 @@
     </div>
   </section>
 
-  <!-- Seção de Serviços -->
-  <section class="container" id="servicos">
-    <div class="section-title">
-      <h2>Nossos Serviços</h2>
-      <p>Procedimentos de alta precisão técnica para o seu automóvel</p>
-    </div>
-
-    <div class="services-grid">
-      <!-- Card Xpress -->
-      <div class="service-card">
-        <div class="card-header-title">
-          <i class="fa-solid fa-bolt"></i>
-          <h3>Técnica Xpress</h3>
-        </div>
-        <ul class="service-list">
-          <li><i class="fa-solid fa-check"></i> Pré-lavagem e Lavagem detalhada</li>
-          <li><i class="fa-solid fa-check"></i> Aspiração interna completa</li>
-          <li><i class="fa-solid fa-check"></i> Limpeza técnica do painel e portas</li>
-          <li><i class="fa-solid fa-check"></i> Aplicação de revitalizador de pneus (pretinho)</li>
-        </ul>
-      </div>
-
-      <!-- Card Premium -->
-      <div class="service-card featured">
-        <div class="card-badge">Mais Pedido</div>
-        <div class="card-header-title">
-          <i class="fa-solid fa-gem"></i>
-          <h3>Técnica Premium</h3>
-        </div>
-        <ul class="service-list">
-          <li><i class="fa-solid fa-star" style="color: var(--gold-primary);"></i> <strong>Tudo da Xpress +</strong></li>
-          <li><i class="fa-solid fa-check"></i> Aspiração interna profunda</li>
-          <li><i class="fa-solid fa-check"></i> Condicionamento e revitalização de plásticos (UV)</li>
-          <li><i class="fa-solid fa-check"></i> Limpeza técnica de vidros internos e externos</li>
-          <li><i class="fa-solid fa-check"></i> Lavagem e proteção de caixas de rodas</li>
-          <li><i class="fa-solid fa-check"></i> Descontaminação básica e Cera de Alta Proteção</li>
-        </ul>
-      </div>
-
-      <!-- Serviços Específicos -->
-      <div class="service-card">
-        <div class="card-header-title">
-          <i class="fa-solid fa-wand-magic-sparkles"></i>
-          <h3>Específicos</h3>
-        </div>
-        <ul class="service-list">
-          <li><i class="fa-solid fa-check"></i> Remoção de marcas e manchas dos vidros</li>
-          <li><i class="fa-solid fa-check"></i> Tratamento de rodas (remoção de fuligem e graxa)</li>
-          <li><i class="fa-solid fa-check"></i> Higienização de carpetes, teto e bancos</li>
-          <li><i class="fa-solid fa-check"></i> Descontaminação com Cera Líquida Hidrorepelente</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
   <!-- Tabela de Preços -->
-  <section class="container">
+  <section class="container" id="combos">
     <div class="section-title">
       <h2>Combos Proporcionais</h2>
       <p>Valores ajustados de acordo com o porte do seu veículo</p>
@@ -695,26 +614,71 @@
       <div class="calc-group">
         <label class="calc-label">2. Escolha os Serviços:</label>
         <div class="checkbox-services">
-          <label class="checkbox-item">
-            <input type="checkbox" value="xpress" id="serv-xpress" onchange="calculateTotal()">
-            <span>Lavagem Xpress</span>
-          </label>
-          <label class="checkbox-item">
-            <input type="checkbox" value="premium" id="serv-premium" onchange="calculateTotal()">
-            <span>Lavagem Premium</span>
-          </label>
-          <label class="checkbox-item">
-            <input type="checkbox" value="bancos" id="serv-bancos" onchange="calculateTotal()">
-            <span>Higienização dos Bancos</span>
-          </label>
-          <label class="checkbox-item">
-            <input type="checkbox" value="higienizacao" id="serv-hig" onchange="calculateTotal()">
-            <span>Higienização Completa</span>
-          </label>
-          <label class="checkbox-item">
-            <input type="checkbox" value="motor" id="serv-motor" onchange="calculateTotal()">
-            <span>Lavagem de Motor (R$ 135)</span>
-          </label>
+          
+          <!-- Lavagem Xpress com Acordeão -->
+          <div class="service-item-wrapper">
+            <div class="checkbox-item">
+              <input type="checkbox" value="xpress" id="serv-xpress" onchange="calculateTotal()">
+              <span class="checkbox-label-text" onclick="document.getElementById('serv-xpress').click()">Lavagem Xpress</span>
+              <button type="button" class="toggle-arrow" onclick="toggleDetails('details-xpress', this)">
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+            </div>
+            <div class="service-details" id="details-xpress">
+              <ul>
+                <li><i class="fa-solid fa-check"></i> Pré-lavagem e Lavagem detalhada</li>
+                <li><i class="fa-solid fa-check"></i> Aspiração interna completa</li>
+                <li><i class="fa-solid fa-check"></i> Limpeza técnica do painel e portas</li>
+                <li><i class="fa-solid fa-check"></i> Aplicação de revitalizador de pneus (pretinho)</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Lavagem Premium com Acordeão -->
+          <div class="service-item-wrapper">
+            <div class="checkbox-item">
+              <input type="checkbox" value="premium" id="serv-premium" onchange="calculateTotal()">
+              <span class="checkbox-label-text" onclick="document.getElementById('serv-premium').click()">Lavagem Premium</span>
+              <button type="button" class="toggle-arrow" onclick="toggleDetails('details-premium', this)">
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+            </div>
+            <div class="service-details" id="details-premium">
+              <ul>
+                <li><i class="fa-solid fa-star" style="color: var(--gold-primary);"></i> Tudo da Xpress +</li>
+                <li><i class="fa-solid fa-check"></i> Aspiração interna profunda</li>
+                <li><i class="fa-solid fa-check"></i> Condicionamento e revitalização de plásticos (UV)</li>
+                <li><i class="fa-solid fa-check"></i> Limpeza técnica de vidros internos e externos</li>
+                <li><i class="fa-solid fa-check"></i> Lavagem e proteção de caixas de rodas</li>
+                <li><i class="fa-solid fa-check"></i> Descontaminação básica e Cera de Alta Proteção</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Higienização dos Bancos -->
+          <div class="service-item-wrapper">
+            <div class="checkbox-item">
+              <input type="checkbox" value="bancos" id="serv-bancos" onchange="calculateTotal()">
+              <span class="checkbox-label-text" onclick="document.getElementById('serv-bancos').click()">Higienização dos Bancos</span>
+            </div>
+          </div>
+
+          <!-- Higienização Completa -->
+          <div class="service-item-wrapper">
+            <div class="checkbox-item">
+              <input type="checkbox" value="higienizacao" id="serv-hig" onchange="calculateTotal()">
+              <span class="checkbox-label-text" onclick="document.getElementById('serv-hig').click()">Higienização Completa</span>
+            </div>
+          </div>
+
+          <!-- Lavagem de Motor -->
+          <div class="service-item-wrapper">
+            <div class="checkbox-item">
+              <input type="checkbox" value="motor" id="serv-motor" onchange="calculateTotal()">
+              <span class="checkbox-label-text" onclick="document.getElementById('serv-motor').click()">Lavagem de Motor (R$ 135)</span>
+            </div>
+          </div>
+
         </div>
       </div>
 
@@ -748,7 +712,7 @@
     </div>
   </footer>
 
-  <!-- Lógica da Calculadora -->
+  <!-- Lógica da Calculadora e Sanfona -->
   <script>
     let selectedCarType = 'hatch';
 
@@ -765,6 +729,17 @@
       element.classList.add('active');
       selectedCarType = type;
       calculateTotal();
+    }
+
+    function toggleDetails(elementId, btn) {
+      const details = document.getElementById(elementId);
+      if (details.style.display === "block") {
+        details.style.display = "none";
+        btn.classList.remove("open");
+      } else {
+        details.style.display = "block";
+        btn.classList.add("open");
+      }
     }
 
     function calculateTotal() {
