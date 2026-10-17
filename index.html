@@ -116,7 +116,7 @@
 
     /* Hero Section */
     .hero {
-      padding: 160px 20px 80px;
+      padding: 160px 20px 70px;
       text-align: center;
       background: linear-gradient(180deg, rgba(255, 255, 255, 0.88) 0%, rgba(248, 250, 252, 0.98) 100%), 
                   url('file_00000000f0d0820ea2aeb03ed181eb93.png') center/cover no-repeat;
@@ -202,12 +202,12 @@
     .container {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 50px 20px;
+      padding: 40px 20px;
     }
 
     .section-title {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 35px;
     }
 
     .section-title h2 {
@@ -226,7 +226,7 @@
       font-weight: 500;
     }
 
-    /* Cards de Promoção e Fidelidade em Lado a Lado */
+    /* Cards de Promoção e Fidelidade Lado a Lado */
     .promo-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -324,47 +324,6 @@
     .price-val {
       color: var(--gold-light);
       font-weight: 700;
-    }
-
-    /* Formas de Pagamento */
-    .payment-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-
-    .payment-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 12px;
-      padding: 20px;
-      text-align: center;
-      transition: all 0.3s ease;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .payment-card:hover {
-      border-color: var(--cyan-neon);
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-md);
-    }
-
-    .payment-card i {
-      font-size: 2rem;
-      color: var(--gold-primary);
-      margin-bottom: 10px;
-    }
-
-    .payment-card h4 {
-      font-size: 1.1rem;
-      color: var(--text-main);
-      margin-bottom: 5px;
-      font-weight: 700;
-    }
-
-    .payment-card p {
-      font-size: 0.85rem;
-      color: var(--text-muted);
     }
 
     /* Calculadora de Orçamento */
@@ -514,11 +473,11 @@
       color: var(--gold-primary);
     }
 
-    /* Rodapé e Contatos */
+    /* Rodapé Compacto */
     footer {
       background: #FFF;
       border-top: 1px solid var(--border-subtle);
-      padding: 40px 20px 20px;
+      padding: 35px 20px 20px;
       text-align: center;
     }
 
@@ -528,26 +487,50 @@
       gap: 10px;
       background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
       color: #FFF;
-      padding: 12px 25px;
+      padding: 10px 22px;
       border-radius: 25px;
       text-decoration: none;
       font-weight: 700;
-      font-size: 0.9rem;
-      margin: 15px 0 25px;
+      font-size: 0.88rem;
+      margin: 12px 0 20px;
       transition: transform 0.3s ease;
-      box-shadow: 0 4px 12px rgba(220, 39, 67, 0.25);
+      box-shadow: 0 4px 12px rgba(220, 39, 67, 0.2);
     }
 
     .social-btn:hover {
       transform: scale(1.05);
     }
 
+    /* Formas de Pagamento em Texto Compacto */
+    .payment-compact {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+      padding-top: 15px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .payment-compact span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+    }
+
+    .payment-compact i {
+      color: var(--gold-primary);
+      font-size: 0.95rem;
+    }
+
     .copyright {
       color: var(--text-muted);
-      font-size: 0.85rem;
-      margin-top: 20px;
-      border-top: 1px solid var(--border-subtle);
-      padding-top: 15px;
+      font-size: 0.8rem;
+      margin-top: 15px;
     }
 
     /* Responsividade */
@@ -563,6 +546,7 @@
       .hero h1 { font-size: 1.6rem; }
       .calc-total-box { flex-direction: column; text-align: center; }
       .price-table th, .price-table td { padding: 10px 6px; font-size: 0.82rem; }
+      .payment-compact { flex-direction: column; gap: 6px; }
     }
   </style>
 </head>
@@ -685,34 +669,6 @@
     </div>
   </section>
 
-  <!-- Formas de Pagamento -->
-  <section class="container">
-    <div class="section-title">
-      <h2>Formas de Pagamento</h2>
-      <p>Facilidade e praticidade para realizar o pagamento do seu serviço</p>
-    </div>
-
-    <div class="payment-grid">
-      <div class="payment-card">
-        <i class="fa-brands fa-pix"></i>
-        <h4>Pix</h4>
-        <p>Pagamento instantâneo e prático</p>
-      </div>
-
-      <div class="payment-card">
-        <i class="fa-solid fa-credit-card"></i>
-        <h4>Cartão de Crédito</h4>
-        <p>Aceitamos as principais bandeiras</p>
-      </div>
-
-      <div class="payment-card">
-        <i class="fa-solid fa-id-card"></i>
-        <h4>Cartão de Débito</h4>
-        <p>Pagamento rápido na maquininha</p>
-      </div>
-    </div>
-  </section>
-
   <!-- Calculadora Interativa -->
   <section class="container" id="calculadora">
     <div class="section-title">
@@ -829,7 +785,7 @@
     </div>
   </section>
 
-  <!-- Rodapé -->
+  <!-- Rodapé Compacto -->
   <footer>
     <div style="font-family: 'UnifrakturMaguntia', cursive; font-size: 1.5rem; color: var(--text-main);">
       CMG Details EstetiCar
@@ -840,6 +796,13 @@
     <a href="https://www.instagram.com/cmg_details_esteticar?rpxt=MXZxMmE1czh2aXV5cQ==" target="_blank" class="social-btn">
       <i class="fa-brands fa-instagram" style="font-size: 1.2rem;"></i> @cmg_details_esteticar
     </a>
+
+    <!-- Formas de Pagamento em Texto Breve -->
+    <div class="payment-compact">
+      <span><i class="fa-brands fa-pix"></i> Pix</span> • 
+      <span><i class="fa-solid fa-credit-card"></i> Cartão de Crédito</span> • 
+      <span><i class="fa-solid fa-receipt"></i> Cartão de Débito</span>
+    </div>
 
     <div class="copyright">
       &copy; CMG Details EstetiCar. Todos os direitos reservados.
