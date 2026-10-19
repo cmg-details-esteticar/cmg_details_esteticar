@@ -8,7 +8,7 @@
   <!-- Fontes Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800;1,900&display=swap" rel="stylesheet">
   
   <!-- Ícones Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -86,18 +86,19 @@
       flex-direction: column;
     }
 
-    /* Fonte Gótica em Negrito no Cabeçalho */
+    /* Fonte sem negrito, elegante e legível no Cabeçalho */
     .brand-gothic {
-      font-family: 'UnifrakturMaguntia', cursive;
-      font-size: 1.8rem;
-      font-weight: 700;
+      font-family: 'Cinzel', serif;
+      font-size: 1.35rem;
+      font-weight: 400;
       color: var(--text-white);
-      letter-spacing: 1px;
-      line-height: 1;
-      text-shadow: 0 0 8px rgba(0, 217, 255, 0.4);
+      letter-spacing: 2px;
+      line-height: 1.1;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px rgba(0, 217, 255, 0.3);
     }
 
-    /* Subtexto do Cabeçalho ajustado */
+    /* Subtexto do Cabeçalho */
     .brand-subtext {
       font-size: 0.65rem;
       font-weight: 800;
@@ -185,15 +186,15 @@
       text-transform: uppercase;
     }
 
-    /* Estilo Elétrico Metálico em Itálico e Negrito */
+    /* Estilo Prata Elétrico Metálico em Itálico e Negrito */
     .hero h1 .electric-metallic {
       font-style: italic;
       font-weight: 900;
-      background: linear-gradient(135deg, #ffffff 0%, #00d9ff 50%, #0055ff 100%);
+      background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 30%, #94a3b8 50%, #ffffff 70%, #00d9ff 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       display: inline-block;
-      filter: drop-shadow(0 0 12px rgba(0, 217, 255, 0.8));
+      filter: drop-shadow(0 0 10px rgba(226, 232, 240, 0.6)) drop-shadow(0 0 20px rgba(0, 217, 255, 0.4));
     }
 
     .hero p {
@@ -637,7 +638,7 @@
     </div>
   </header>
 
-  <!-- Hero Section com Texto elétrico metálico em itálico/negrito -->
+  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-container">
       <div class="hero-content">
