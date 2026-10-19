@@ -8,7 +8,7 @@
   <!-- Fontes Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800;1,900&display=swap" rel="stylesheet">
   
   <!-- Ícones Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -86,18 +86,25 @@
       flex-direction: column;
     }
 
+    /* Fonte Gótica em Negrito no Cabeçalho */
     .brand-gothic {
-      font-size: 1.3rem;
-      font-weight: 900;
+      font-family: 'UnifrakturMaguntia', cursive;
+      font-size: 1.8rem;
+      font-weight: 700;
       color: var(--text-white);
       letter-spacing: 1px;
+      line-height: 1;
+      text-shadow: 0 0 8px rgba(0, 217, 255, 0.4);
     }
 
+    /* Subtexto do Cabeçalho ajustado */
     .brand-subtext {
       font-size: 0.65rem;
-      font-weight: 700;
+      font-weight: 800;
       color: var(--neon-cyan);
       letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 2px;
     }
 
     .header-contact {
@@ -173,15 +180,20 @@
 
     .hero h1 {
       font-size: 2.8rem;
-      font-weight: 900;
       line-height: 1.15;
       margin-bottom: 15px;
       text-transform: uppercase;
     }
 
-    .hero h1 span.blue-text {
-      color: var(--neon-cyan);
-      text-shadow: 0 0 15px rgba(0, 217, 255, 0.6);
+    /* Estilo Elétrico Metálico em Itálico e Negrito */
+    .hero h1 .electric-metallic {
+      font-style: italic;
+      font-weight: 900;
+      background: linear-gradient(135deg, #ffffff 0%, #00d9ff 50%, #0055ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+      filter: drop-shadow(0 0 12px rgba(0, 217, 255, 0.8));
     }
 
     .hero p {
@@ -271,7 +283,7 @@
       font-weight: 700;
     }
 
-    /* VANTAGENS EXCLUSIVAS: RIGOROSAMENTE LADO A LADO */
+    /* Vantagens Exclusivas */
     .promo-wrapper {
       width: 100%;
       overflow-x: auto;
@@ -610,8 +622,8 @@
       <a href="#" class="brand-logo">
         <img src="logo.png" alt="CMG Details EstetiCar">
         <div class="brand-title">
-          <span class="brand-gothic">CMG DETAILS</span>
-          <span class="brand-subtext">ESTÉTICA AUTOMOTIVA PREMIUM</span>
+          <span class="brand-gothic">CMG DETAILS ESTETICAR</span>
+          <span class="brand-subtext">ESTÉTICA AUTOMOTIVA</span>
         </div>
       </a>
       <div class="header-contact">
@@ -625,12 +637,12 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero Section com Texto elétrico metálico em itálico/negrito -->
   <section class="hero">
     <div class="hero-container">
       <div class="hero-content">
         <div class="hero-badge">CUIDADO, PROTEÇÃO E VALORIZAÇÃO</div>
-        <h1>CMG <br><span class="blue-text">Details EstetiCar</span></h1>
+        <h1><span class="electric-metallic">CMG Details EstetiCar</span></h1>
         <p>Mais que uma lavagem, é cuidado agregado à proteção. Tratamento técnico detalhado para renovar e valorizar o seu veículo.</p>
         <div class="hero-buttons">
           <a href="#calculadora" class="btn-main"><i class="fa-solid fa-calculator"></i> Simular Orçamento</a>
@@ -640,7 +652,7 @@
     </div>
   </section>
 
-  <!-- Vantagens Exclusivas Fixas Lado a Lado -->
+  <!-- Vantagens Exclusivas -->
   <section class="container" id="promocoes">
     <div class="section-title">
       <h2>Vantagens Exclusivas</h2>
@@ -649,7 +661,6 @@
 
     <div class="promo-wrapper">
       <div class="promo-grid">
-        <!-- Card 1: Fidelidade Xpress -->
         <div class="promo-card">
           <div>
             <div class="promo-icon"><i class="fa-solid fa-car-wash"></i></div>
@@ -659,7 +670,6 @@
           <span class="highlight-badge">6ª Xpress Grátis</span>
         </div>
 
-        <!-- Card 2: Bónus Premium -->
         <div class="promo-card">
           <div>
             <div class="promo-icon"><i class="fa-solid fa-crown"></i></div>
@@ -669,7 +679,6 @@
           <span class="highlight-badge">Manutenção Grátis</span>
         </div>
 
-        <!-- Card 3: Indique um Amigo -->
         <div class="promo-card">
           <div>
             <div class="promo-icon"><i class="fa-solid fa-users"></i></div>
