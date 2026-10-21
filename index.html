@@ -712,6 +712,13 @@
         </thead>
         <tbody>
           <tr>
+            <td><strong>Motos</strong></td>
+            <td class="price-val">R$ 30,00</td>
+            <td class="price-val">R$ 60,00</td>
+            <td class="price-val">-</td>
+            <td class="price-val">-</td>
+          </tr>
+          <tr>
             <td><strong>Hatch</strong></td>
             <td class="price-val">R$ 49,90</td>
             <td class="price-val">R$ 119,90</td>
@@ -757,7 +764,8 @@
       <div class="calc-group">
         <label class="calc-label">1. Tipo do Veículo:</label>
         <div class="car-types-grid">
-          <div class="car-btn active" onclick="selectCar('hatch', this)">Hatch</div>
+          <div class="car-btn active" onclick="selectCar('motos', this)">Motos</div>
+          <div class="car-btn" onclick="selectCar('hatch', this)">Hatch</div>
           <div class="car-btn" onclick="selectCar('sedan', this)">Sedan</div>
           <div class="car-btn" onclick="selectCar('suv', this)">SUV / Pickup</div>
           <div class="car-btn" onclick="selectCar('utilitario', this)">Utilitário</div>
@@ -880,9 +888,10 @@
 
   <!-- Lógica JavaScript da Calculadora -->
   <script>
-    let selectedCarType = 'hatch';
+    let selectedCarType = 'motos';
 
     const prices = {
+      motos: { xpress: 30.00, premium: 60.00, bancos: 0, higienizacao: 0 },
       hatch: { xpress: 49.90, premium: 119.90, bancos: 120.00, higienizacao: 199.90 },
       sedan: { xpress: 59.90, premium: 129.90, bancos: 140.00, higienizacao: 229.90 },
       suv: { xpress: 79.90, premium: 139.90, bancos: 160.00, higienizacao: 259.90 },
@@ -940,6 +949,7 @@
       const whatsappBtn = document.getElementById('whatsapp-btn');
       if (whatsappBtn) {
         const carLabels = {
+          motos: 'Motos',
           hatch: 'Hatch',
           sedan: 'Sedan',
           suv: 'SUV / Pickup',
