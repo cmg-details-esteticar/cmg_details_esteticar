@@ -717,7 +717,7 @@
       cursor: pointer;
     }
 
-    /* CONTADOR DE ACESSOS DISCRETO (QUASE IMPERCEPTÍVEL) */
+    /* CONTADOR REAL DE ACESSOS (QUASE IMPERCEPTÍVEL) */
     .visitor-counter {
       position: fixed;
       bottom: 8px;
@@ -814,9 +814,9 @@
 </head>
 <body>
 
-  <!-- Contador de Acessos Discreto (Canto Inferior Esquerdo) -->
+  <!-- Contador Real de Acessos (Canto Inferior Esquerdo) -->
   <div class="visitor-counter">
-    <i class="fa-solid fa-circle"></i> <span id="view-count">128</span> online
+    <i class="fa-solid fa-circle"></i> <span id="view-count">...</span> visitas
   </div>
 
   <!-- Cabeçalho -->
@@ -1257,7 +1257,22 @@
       }, 700);
     }
 
-    document.addEventListener('DOMContentLoaded', calculateTotal);
+    /* Contador Real de Acessos via API gratuita */
+    async function fetchRealVisitorCount() {
+      try {
+        // Usa uma API pública gratuita para somar e puxar acessos reais únicos por site
+        const response = await fetch('https://api.counterapi.dev/v1/cmgdetails/esteticar/up');
+        const data = await response.json();
+        document.getElementById('view-count').innerText = data.count;
+      } catch (error) {
+        document.getElementById('view-count').innerText = "1";
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      calculateTotal();
+      fetchRealVisitorCount();
+    });
   </script>
 </body>
 </html>
