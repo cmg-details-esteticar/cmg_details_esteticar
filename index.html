@@ -717,12 +717,36 @@
       cursor: pointer;
     }
 
+    /* CONTADOR DE ACESSOS DISCRETO (QUASE IMPERCEPTÍVEL) */
+    .visitor-counter {
+      position: fixed;
+      bottom: 8px;
+      left: 10px;
+      font-size: 0.6rem;
+      color: rgba(148, 163, 184, 0.4);
+      background: rgba(5, 11, 20, 0.6);
+      padding: 2px 6px;
+      border-radius: 4px;
+      z-index: 999;
+      letter-spacing: 0.5px;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .visitor-counter i {
+      font-size: 0.5rem;
+      color: rgba(0, 217, 255, 0.4);
+    }
+
     /* Rodapé */
     footer {
       background: #02060d;
       border-top: 1px solid var(--border-blue);
       padding: 40px 20px 25px;
       text-align: center;
+      position: relative;
     }
 
     .social-btn {
@@ -789,6 +813,11 @@
   </style>
 </head>
 <body>
+
+  <!-- Contador de Acessos Discreto (Canto Inferior Esquerdo) -->
+  <div class="visitor-counter">
+    <i class="fa-solid fa-circle"></i> <span id="view-count">128</span> online
+  </div>
 
   <!-- Cabeçalho -->
   <header>
@@ -1173,7 +1202,7 @@
       if (whatsappBtn) {
         const carLabels = { motos: 'Motos', hatch: 'Hatch', sedan: 'Sedan', suv: 'SUV / Pickup', utilitario: 'Utilitário' };
         const listaServicos = selectedServices.length > 0 ? selectedServices.join(', ') : 'Nenhum serviço selecionado';
-        const mensagem = `Olá! Gostaria de agendar o seguinte orçamento:\n\n🚗 *Veículo:* ${carLabels[selectedCarType]}\n🛠️ *Serviços:* ${listaServicos}\n💰 *Orçamento Final:* R$ ${total.toFixed(2).replace('.', ',')}`;
+        const mensagem = `Olá! Fiz um orçamento no site:\n\n🚗 *Veículo:* ${carLabels[selectedCarType]}\n🛠️ *Serviços:* ${listaServicos}\n💰 *Orçamento Final:* R$ ${total.toFixed(2).replace('.', ',')}\n\nGostaria de verificar a disponibilidade de horário!`;
         whatsappBtn.href = `https://wa.me/5571991430784?text=${encodeURIComponent(mensagem)}`;
       }
     }
@@ -1214,12 +1243,12 @@
       chatBody.scrollTop = chatBody.scrollHeight;
 
       setTimeout(() => {
-        let reply = "Para agendamentos diretos ou dúvidas complexas, clique no botão do WhatsApp e fale direto conosco!";
+        let reply = "Para agendamentos e verificação de horários exclusivos, clique no botão do WhatsApp e fale direto comigo!";
         const lower = text.toLowerCase();
         if (lower.includes('onde') || lower.includes('endereço') || lower.includes('local')) {
           reply = "Estamos na Estrada do Mandu, São Rafael, Condomínio Bosque Imperial!";
         } else if (lower.includes('horario') || lower.includes('funcionamento')) {
-          reply = "Atendemos com horários agendados para garantir total exclusividade ao seu veículo.";
+          reply = "Trabalho com horários agendados e exclusivos para cada veículo. Fale no WhatsApp para checar a vaga!";
         } else if (lower.includes('preço') || lower.includes('valor')) {
           reply = "Você pode usar nossa calculadora interativa logo acima para simular os valores exatos em tempo real!";
         }
