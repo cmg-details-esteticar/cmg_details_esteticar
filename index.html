@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CMG Details EstetiCar | Estética Automotiva</title>
+  <title>CMG Details EstetiCar | Estética Automotiva com IA</title>
   
   <!-- Fontes Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -86,7 +86,6 @@
       flex-direction: column;
     }
 
-    /* Fonte sem negrito, elegante e legível no Cabeçalho */
     .brand-gothic {
       font-family: 'Cinzel', serif;
       font-size: 1.35rem;
@@ -98,7 +97,6 @@
       text-shadow: 0 0 10px rgba(0, 217, 255, 0.3);
     }
 
-    /* Subtexto do Cabeçalho */
     .brand-subtext {
       font-size: 0.65rem;
       font-weight: 800;
@@ -167,7 +165,9 @@
     }
 
     .hero-badge {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       padding: 6px 14px;
       border-radius: 4px;
       background: rgba(0, 136, 255, 0.15);
@@ -186,7 +186,6 @@
       text-transform: uppercase;
     }
 
-    /* Estilo Prata Elétrico Metálico em Itálico e Negrito */
     .hero h1 .electric-metallic {
       font-style: italic;
       font-weight: 900;
@@ -282,6 +281,78 @@
       text-transform: uppercase;
       letter-spacing: 1px;
       font-weight: 700;
+    }
+
+    /* SEÇÃO IA: DIAGNÓSTICO INTELIGENTE */
+    .ai-diagnostic-box {
+      background: linear-gradient(135deg, rgba(9, 19, 34, 0.95) 0%, rgba(13, 27, 48, 0.95) 100%);
+      border: 1px solid var(--neon-cyan);
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 0 25px rgba(0, 217, 255, 0.2);
+      margin-bottom: 50px;
+      position: relative;
+    }
+
+    .ai-diagnostic-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .ai-diagnostic-header i {
+      font-size: 1.8rem;
+      color: var(--neon-cyan);
+      animation: pulse-ai 2s infinite;
+    }
+
+    @keyframes pulse-ai {
+      0% { text-shadow: 0 0 5px var(--neon-cyan); }
+      50% { text-shadow: 0 0 20px var(--neon-cyan); }
+      100% { text-shadow: 0 0 5px var(--neon-cyan); }
+    }
+
+    .ai-diagnostic-header h3 {
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .ai-options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .ai-option-card {
+      background: rgba(15, 28, 46, 0.8);
+      border: 1px solid var(--border-blue);
+      padding: 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .ai-option-card:hover, .ai-option-card.selected {
+      border-color: var(--neon-cyan);
+      background: rgba(0, 136, 255, 0.15);
+    }
+
+    .ai-result-panel {
+      background: rgba(2, 6, 13, 0.8);
+      border-left: 4px solid var(--neon-cyan);
+      padding: 15px 20px;
+      border-radius: 0 8px 8px 0;
+      margin-top: 15px;
+      display: none;
+    }
+
+    .ai-result-panel.active {
+      display: block;
     }
 
     /* Vantagens Exclusivas */
@@ -544,6 +615,108 @@
       text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
     }
 
+    /* Widget Chatbot IA Flutuante */
+    .ai-chat-widget {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      z-index: 9999;
+    }
+
+    .ai-chat-btn {
+      background: linear-gradient(135deg, var(--neon-blue), var(--neon-cyan));
+      color: #000;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      box-shadow: 0 0 20px rgba(0, 217, 255, 0.6);
+      cursor: pointer;
+      border: 2px solid #fff;
+      transition: transform 0.3s;
+    }
+
+    .ai-chat-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .ai-chat-box {
+      position: absolute;
+      bottom: 75px;
+      right: 0;
+      width: 320px;
+      background: var(--bg-card);
+      border: 1px solid var(--neon-cyan);
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .ai-chat-box.open {
+      display: flex;
+    }
+
+    .ai-chat-header {
+      background: rgba(0, 136, 255, 0.2);
+      padding: 12px 15px;
+      border-bottom: 1px solid var(--border-blue);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      font-weight: 800;
+    }
+
+    .ai-chat-body {
+      padding: 15px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      height: 200px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .ai-msg {
+      background: rgba(0, 136, 255, 0.1);
+      padding: 8px 12px;
+      border-radius: 6px;
+      color: #fff;
+      max-width: 85%;
+    }
+
+    .ai-chat-footer {
+      padding: 10px;
+      border-top: 1px solid var(--border-blue);
+      display: flex;
+      gap: 8px;
+    }
+
+    .ai-chat-footer input {
+      flex-grow: 1;
+      background: #02060d;
+      border: 1px solid var(--border-blue);
+      padding: 8px;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 0.8rem;
+    }
+
+    .ai-chat-footer button {
+      background: var(--neon-blue);
+      border: none;
+      color: #fff;
+      padding: 0 12px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
     /* Rodapé */
     footer {
       background: #02060d;
@@ -642,13 +815,43 @@
   <section class="hero">
     <div class="hero-container">
       <div class="hero-content">
-        <div class="hero-badge">CUIDADO, PROTEÇÃO E VALORIZAÇÃO</div>
+        <div class="hero-badge"><i class="fa-solid fa-microchip"></i> ATENDIMENTO INTELIGENTE COM IA</div>
         <h1><span class="electric-metallic">CMG Details EstetiCar</span></h1>
         <p>Mais que uma lavagem, é cuidado agregado à proteção. Tratamento técnico detalhado para renovar e valorizar o seu veículo.</p>
         <div class="hero-buttons">
           <a href="#calculadora" class="btn-main"><i class="fa-solid fa-calculator"></i> Simular Orçamento</a>
           <a href="https://wa.me/5571991430784" target="_blank" class="btn-outline"><i class="fa-brands fa-whatsapp"></i> Falar Conosco</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ferramenta de Diagnóstico IA -->
+  <section class="container" id="diagnostico-ia">
+    <div class="ai-diagnostic-box">
+      <div class="ai-diagnostic-header">
+        <i class="fa-solid fa-brain"></i>
+        <div>
+          <h3>Diagnóstico Automotivo por IA</h3>
+          <p style="font-size: 0.75rem; color: var(--text-muted);">Selecione o estado atual do seu veículo para receber a recomendação ideal:</p>
+        </div>
+      </div>
+
+      <div class="ai-options-grid">
+        <div class="ai-option-card" onclick="runAiDiagnostic('pintura')">
+          <i class="fa-solid fa-car-burst" style="color: var(--neon-cyan);"></i> Pintura áspera, opaca ou com manchas de chuva ácida.
+        </div>
+        <div class="ai-option-card" onclick="runAiDiagnostic('interno')">
+          <i class="fa-solid fa-couch" style="color: var(--neon-cyan);"></i> Bancos encardidos, odores ou interior precisando de renovação.
+        </div>
+        <div class="ai-option-card" onclick="runAiDiagnostic('manutencao')">
+          <i class="fa-solid fa-wand-magic-sparkles" style="color: var(--neon-cyan);"></i> Manutenção rápida pós-viagem ou acúmulo de poeira.
+        </div>
+      </div>
+
+      <div class="ai-result-panel" id="ai-result">
+        <strong style="color: var(--neon-cyan); display: block; margin-bottom: 5px;"><i class="fa-solid fa-robot"></i> Recomendação do Consultor IA:</strong>
+        <span id="ai-recommendation-text">Selecione uma opção acima para gerar a análise.</span>
       </div>
     </div>
   </section>
@@ -864,14 +1067,34 @@
     </div>
   </section>
 
+  <!-- Chatbot IA Flutuante -->
+  <div class="ai-chat-widget">
+    <div class="ai-chat-btn" onclick="toggleChat()">
+      <i class="fa-solid fa-robot"></i>
+    </div>
+    <div class="ai-chat-box" id="aiChatBox">
+      <div class="ai-chat-header">
+        <span><i class="fa-solid fa-circle" style="color: #00ff66; font-size: 0.5rem;"></i> CMG Assistente IA</span>
+        <button onclick="toggleChat()" style="background:none;border:none;color:#fff;cursor:pointer;"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="ai-chat-body" id="chatBody">
+        <div class="ai-msg">Olá! Sou a assistente virtual da CMG Details EstetiCar. Como posso ajudar a cuidar do seu veículo hoje?</div>
+      </div>
+      <div class="ai-chat-footer">
+        <input type="text" id="chatInput" placeholder="Digite sua dúvida..." onkeypress="handleChatKey(event)">
+        <button onclick="sendChatMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+      </div>
+    </div>
+  </div>
+
   <!-- Rodapé -->
   <footer>
     <div style="font-size: 1.2rem; font-weight: 900; color: var(--text-white); text-transform: uppercase; letter-spacing: 1px;">
       CMG Details EstetiCar
     </div>
-    <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 5px;">Seu veículo em boas mãos!</p>
+    <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 5px;">Estrada do Mandu, São Rafael, Condomínio Bosque Imperial</p>
 
-    <a href="https://www.instagram.com/cmg_details_esteticar?rpxt=MXZxMmE1czh2aXV5cQ==" target="_blank" class="social-btn">
+    <a href="https://www.instagram.com/cmg_details_esteticar" target="_blank" class="social-btn">
       <i class="fa-brands fa-instagram" style="font-size: 1.1rem; color: var(--neon-cyan);"></i> @cmg_details_esteticar
     </a>
 
@@ -886,7 +1109,7 @@
     </div>
   </footer>
 
-  <!-- Lógica JavaScript da Calculadora -->
+  <!-- Lógica JavaScript -->
   <script>
     let selectedCarType = 'motos';
 
@@ -948,22 +1171,61 @@
 
       const whatsappBtn = document.getElementById('whatsapp-btn');
       if (whatsappBtn) {
-        const carLabels = {
-          motos: 'Motos',
-          hatch: 'Hatch',
-          sedan: 'Sedan',
-          suv: 'SUV / Pickup',
-          utilitario: 'Utilitário'
-        };
-
+        const carLabels = { motos: 'Motos', hatch: 'Hatch', sedan: 'Sedan', suv: 'SUV / Pickup', utilitario: 'Utilitário' };
         const listaServicos = selectedServices.length > 0 ? selectedServices.join(', ') : 'Nenhum serviço selecionado';
-        const mensagem = `Olá! Gostaria de agendar o seguinte orçamento:\n\n` +
-                         `🚗 *Veículo:* ${carLabels[selectedCarType]}\n` +
-                         `🛠️ *Serviços:* ${listaServicos}\n` +
-                         `💰 *Orçamento Final:* R$ ${total.toFixed(2).replace('.', ',')}`;
-
+        const mensagem = `Olá! Gostaria de agendar o seguinte orçamento:\n\n🚗 *Veículo:* ${carLabels[selectedCarType]}\n🛠️ *Serviços:* ${listaServicos}\n💰 *Orçamento Final:* R$ ${total.toFixed(2).replace('.', ',')}`;
         whatsappBtn.href = `https://wa.me/5571991430784?text=${encodeURIComponent(mensagem)}`;
       }
+    }
+
+    /* Sistema de Diagnóstico IA */
+    function runAiDiagnostic(type) {
+      const resultPanel = document.getElementById('ai-result');
+      const textSpan = document.getElementById('ai-recommendation-text');
+      resultPanel.classList.add('active');
+
+      if (type === 'pintura') {
+        textSpan.innerHTML = "Recomendamos a <strong>Lavagem Premium</strong> (com descontaminação de pintura e cera de alta proteção) para restaurar o toque liso e o brilho intenso.";
+      } else if (type === 'interno') {
+        textSpan.innerHTML = "Recomendamos o combo de <strong>Higienização Interna Completa</strong> + <strong>Higienização dos Bancos</strong> para remoção profunda de odores e renovação das fibras.";
+      } else if (type === 'manutencao') {
+        textSpan.innerHTML = "Recomendamos a <strong>Lavagem Xpress</strong> para uma manutenção rápida, eficiente e com proteção prolongada.";
+      }
+    }
+
+    /* Lógica do Chatbot IA Flutuante */
+    function toggleChat() {
+      const box = document.getElementById('aiChatBox');
+      box.classList.toggle('open');
+    }
+
+    function handleChatKey(e) {
+      if (e.key === 'Enter') sendChatMessage();
+    }
+
+    function sendChatMessage() {
+      const input = document.getElementById('chatInput');
+      const chatBody = document.getElementById('chatBody');
+      const text = input.value.trim();
+      if (!text) return;
+
+      chatBody.innerHTML += `<div class="ai-msg" style="background: rgba(0,217,255,0.2); margin-left: auto;">${text}</div>`;
+      input.value = '';
+      chatBody.scrollTop = chatBody.scrollHeight;
+
+      setTimeout(() => {
+        let reply = "Para agendamentos diretos ou dúvidas complexas, clique no botão do WhatsApp e fale direto conosco!";
+        const lower = text.toLowerCase();
+        if (lower.includes('onde') || lower.includes('endereço') || lower.includes('local')) {
+          reply = "Estamos na Estrada do Mandu, São Rafael, Condomínio Bosque Imperial!";
+        } else if (lower.includes('horario') || lower.includes('funcionamento')) {
+          reply = "Atendemos com horários agendados para garantir total exclusividade ao seu veículo.";
+        } else if (lower.includes('preço') || lower.includes('valor')) {
+          reply = "Você pode usar nossa calculadora interativa logo acima para simular os valores exatos em tempo real!";
+        }
+        chatBody.innerHTML += `<div class="ai-msg">${reply}</div>`;
+        chatBody.scrollTop = chatBody.scrollHeight;
+      }, 700);
     }
 
     document.addEventListener('DOMContentLoaded', calculateTotal);
