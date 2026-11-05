@@ -135,7 +135,6 @@
       background: url('fundo.png') center center / cover no-repeat;
     }
 
-    /* Camada escura translúcida para garantir legibilidade total sobre a imagem */
     .hero::before {
       content: "";
       position: absolute;
@@ -344,6 +343,64 @@
       font-weight: 800;
       font-size: 0.72rem;
       text-transform: uppercase;
+    }
+
+    /* Nova Seção: Banner / Imagem Estilizada dos Materiais Profissionais */
+    .showcase-banner-section {
+      width: 100%;
+      padding: 20px 0 40px;
+    }
+
+    .showcase-banner-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--neon-cyan);
+      box-shadow: 0 0 25px rgba(0, 217, 255, 0.3);
+      background: var(--bg-card);
+    }
+
+    .showcase-banner-container img {
+      width: 100%;
+      height: auto;
+      max-height: 480px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .showcase-banner-container:hover img {
+      transform: scale(1.02);
+    }
+
+    .showcase-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(to top, rgba(5, 11, 20, 0.95) 10%, rgba(5, 11, 20, 0.7) 60%, transparent 100%);
+      padding: 30px 25px 20px;
+      text-align: center;
+    }
+
+    .showcase-overlay h3 {
+      font-size: 1.3rem;
+      color: var(--text-white);
+      text-transform: uppercase;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      margin-bottom: 5px;
+      text-shadow: 0 0 10px rgba(0, 217, 255, 0.6);
+    }
+
+    .showcase-overlay p {
+      color: var(--neon-cyan);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     /* Tabela de Preços */
@@ -570,7 +627,7 @@
       text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
     }
 
-    /* Widget Chatbot Flutuante (Canto Inferior Direito, Discreto) */
+    /* Widget Chatbot Flutuante */
     .ai-chat-widget {
       position: fixed;
       bottom: 20px;
@@ -672,7 +729,6 @@
       cursor: pointer;
     }
 
-    /* Contador Real de Acessos */
     .visitor-counter {
       font-size: 0.65rem;
       color: rgba(148, 163, 184, 0.5);
@@ -833,6 +889,17 @@
     <div class="section-title">
       <h2>Combos Proporcionais</h2>
       <p>Valores ajustados de acordo com o porte do seu veículo</p>
+    </div>
+
+    <!-- Banner / Imagem de Produtos e Materiais Profissionais Estilizada -->
+    <div class="showcase-banner-section">
+      <div class="showcase-banner-container">
+        <img src="File_00000000a8a4820eaa1ad09cc1b8861e.png" alt="Materiais e Produtos Profissionais CMG Details EstetiCar">
+        <div class="showcase-overlay">
+          <h3>Padrão Profissional CMG Details</h3>
+          <p>Tecnologia, Equipamentos e Produtos de Alta Performance para o Seu Veículo</p>
+        </div>
+      </div>
     </div>
 
     <div class="prices-container">
@@ -1012,7 +1079,7 @@
     </div>
   </section>
 
-  <!-- Chatbot / Assistente Virtual Flutuante (Canto Inferior Direito) -->
+  <!-- Chatbot / Assistente Virtual Flutuante -->
   <div class="ai-chat-widget">
     <div class="ai-chat-btn" onclick="toggleChat()" title="Tirar Dúvidas">
       <i class="fa-solid fa-robot"></i>
@@ -1049,7 +1116,6 @@
       <span><i class="fa-solid fa-receipt"></i> Cartão de Débito</span>
     </div>
 
-    <!-- Contador Real de Acessos Discreto -->
     <div class="visitor-counter">
       <i class="fa-solid fa-circle" style="font-size: 0.4rem; color: var(--neon-cyan);"></i> <span id="view-count">...</span> visitas no estúdio
     </div>
@@ -1138,7 +1204,6 @@
       }
     }
 
-    /* Lógica do Chatbot Flutuante (Tirar Dúvidas) */
     function toggleChat() {
       const box = document.getElementById('aiChatBox');
       box.classList.toggle('open');
@@ -1173,7 +1238,6 @@
       }, 700);
     }
 
-    /* Contador Real de Acessos */
     async function fetchRealVisitorCount() {
       try {
         const response = await fetch('https://api.counterapi.dev/v1/cmgdetails/esteticar/up');
