@@ -123,7 +123,7 @@
       color: var(--neon-cyan);
     }
 
-    /* Hero Section com Imagem de Fundo Horizontal, Centralizada e Perfeita para Leitura */
+    /* Hero Section */
     .hero {
       padding: 160px 20px 80px;
       position: relative;
@@ -345,59 +345,49 @@
       text-transform: uppercase;
     }
 
-    /* Nova Seção: Banner / Imagem Estilizada dos Materiais Profissionais */
-    .showcase-banner-section {
+    /* Seção da Imagem dos Materiais Esticada e Estilizada */
+    .materials-showcase {
       width: 100%;
-      padding: 20px 0 40px;
-    }
-
-    .showcase-banner-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      position: relative;
+      margin: 30px 0 40px;
       border-radius: 12px;
       overflow: hidden;
-      border: 1px solid var(--neon-cyan);
-      box-shadow: 0 0 25px rgba(0, 217, 255, 0.3);
+      border: 2px solid var(--neon-cyan);
+      box-shadow: 0 0 25px rgba(0, 217, 255, 0.4);
+      position: relative;
       background: var(--bg-card);
     }
 
-    .showcase-banner-container img {
+    .materials-showcase img {
       width: 100%;
-      height: auto;
-      max-height: 480px;
+      height: 380px;
       object-fit: cover;
+      object-position: center;
       display: block;
-      transition: transform 0.5s ease;
     }
 
-    .showcase-banner-container:hover img {
-      transform: scale(1.02);
-    }
-
-    .showcase-overlay {
+    .materials-badge-overlay {
       position: absolute;
       bottom: 0;
       left: 0;
       width: 100%;
-      background: linear-gradient(to top, rgba(5, 11, 20, 0.95) 10%, rgba(5, 11, 20, 0.7) 60%, transparent 100%);
-      padding: 30px 25px 20px;
+      background: linear-gradient(to top, rgba(5, 11, 20, 0.95) 15%, rgba(5, 11, 20, 0.7) 70%, transparent 100%);
+      padding: 25px 20px 15px;
       text-align: center;
     }
 
-    .showcase-overlay h3 {
-      font-size: 1.3rem;
+    .materials-badge-overlay h3 {
+      font-size: 1.25rem;
       color: var(--text-white);
       text-transform: uppercase;
       font-weight: 900;
       letter-spacing: 1.5px;
-      margin-bottom: 5px;
+      margin-bottom: 4px;
       text-shadow: 0 0 10px rgba(0, 217, 255, 0.6);
     }
 
-    .showcase-overlay p {
+    .materials-badge-overlay p {
       color: var(--neon-cyan);
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -804,6 +794,7 @@
       .calc-total-box { flex-direction: column; text-align: center; }
       .price-table th, .price-table td { padding: 10px 8px; font-size: 0.8rem; }
       .promo-grid { grid-template-columns: repeat(3, 210px); }
+      .materials-showcase img { height: 240px; }
     }
   </style>
 </head>
@@ -884,21 +875,19 @@
     </div>
   </section>
 
-  <!-- Tabela de Preços -->
+  <!-- Tabela de Preços e Combos Proporcionais -->
   <section class="container" id="combos">
     <div class="section-title">
       <h2>Combos Proporcionais</h2>
       <p>Valores ajustados de acordo com o porte do seu veículo</p>
     </div>
 
-    <!-- Banner / Imagem de Produtos e Materiais Profissionais Estilizada -->
-    <div class="showcase-banner-section">
-      <div class="showcase-banner-container">
-        <img src="File_00000000a8a4820eaa1ad09cc1b8861e.png" alt="Materiais e Produtos Profissionais CMG Details EstetiCar">
-        <div class="showcase-overlay">
-          <h3>Padrão Profissional CMG Details</h3>
-          <p>Tecnologia, Equipamentos e Produtos de Alta Performance para o Seu Veículo</p>
-        </div>
+    <!-- IMAGEM DOS MATERIAIS PROFISSIONAIS INSERIDA AQUI -->
+    <div class="materials-showcase">
+      <img src="file_00000000a8a4820eaa1ad09cc1b8861e.png" alt="Materiais e Produtos Profissionais CMG Details EstetiCar">
+      <div class="materials-badge-overlay">
+        <h3>Materiais e Produtos Profissionais</h3>
+        <p>Tecnologia e Alto Padrão em Cada Detalhe do Seu Veículo</p>
       </div>
     </div>
 
